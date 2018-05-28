@@ -1,0 +1,2 @@
+class TopupsController < ApplicationController
+end
