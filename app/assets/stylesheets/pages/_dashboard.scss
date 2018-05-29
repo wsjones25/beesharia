@@ -1,0 +1,55 @@
+.wrapper {
+  background-color: #ECECEC;
+  margin: 0px;
+}
+
+.all-container {
+  width: 1300px;
+  margin: auto;
+  padding-top: 40px;
+  h3 {
+    font-size: 20px;
+    span{
+      text-decoration: underline;
+    }
+  }
+}
+
+.main-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: top;
+  margin-top: 30px;
+}
+
+.cards-container {
+  flex: 1 0 auto;
+}
+
+.filter-container {
+  width: 400px;
+  height: 330px;
+  border: 2px solid #E7E7E7;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 25px 50px;
+  background-color: white;
+  position: sticky;
+  top: 20px;
+}
+
+.filter-box {
+  background-color: #eaeaea;
+  width: 200px;
+  font-size: 14px;
+  color: #818181;
+  border: 2px solid #E7E7E7;
+  border-radius: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 10px;
+}
+
+.h5-title {
+  margin-top: 25px;
+}

@@ -10,8 +10,10 @@
 
 
 .home-headers {
-  padding-top: 40px;
+  padding-top: 20px;
   padding-left: 200px;
+  display: flex;
+  align-items: center;
 }
 
 .home-headers h1 {
@@ -31,10 +33,10 @@
 
 // home buttons
 
-.btn-get-started {
+.btn-get-started-home {
   padding: 22px 10px 22px 20px;
   background-color: #73F0D6;
-  width: 50px;
+  width: 150px;
   position: relative;
   border-radius: 10px;
   a {
@@ -45,12 +47,11 @@
   }
 }
 
-.btn-get-started:hover {
-  background-color: #5fa99e;
+.btn-get-started-home:hover {
   color: white;
   border: none;
   box-shadow: 0px 0px 1px #5c7773;
-  opacity: 1.0;
+  opacity: 0.8;
 }
 
 // footer styling
@@ -60,4 +61,23 @@
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.flex-home-image {
+  display: flex;
+}
+
+// second home page section
+
+.second-section-blue {
+  height: 100px;
+  width: 100%;
+  background-color: #171236;
+  color: white;
+}
+
+.second-section-blue h5 {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
 }
