@@ -1,0 +1,76 @@
+<div class="wrapper">
+  <div class="all-container">
+    <h3 class="text-center">Hi <%= user.email %></h3>
+    <div class="main-container">
+      <!-- <div class="filter-container-parent"> -->
+        <div class="filter-container">
+
+       <!--    <%= form_tag company_path, method: :get do %> -->
+
+            <h5 >Practice area</h5 >
+            <select class="filter-box" name="practice_area">
+              <option value="">Department</option>
+             <!--  <% LawyerInfo::PRACTICE_AREA.each do |info| %>
+                 <option value="<%= info %>"><%= info %></option>
+              <% end %> -->
+            </select>
+            <br>
+
+            <h5 class="h5-title">Job status</h5 >
+            <select class="filter-box" name="job_status">
+              <option value="">Job status</option>
+             <!--  <% LawyerInfo::JOB_STATUS.each do |info| %>
+                 <option value="<%= info %>"><%= info %></option>
+              <% end %> -->
+            </select>
+            <br>
+
+            <h5 class="h5-title">Post-qual experience</h5 >
+            <select class="filter-box" name="pqe">
+              <!-- <option value="">PQE</option>
+              <% LawyerInfo::PQE.each do |info| %>
+                 <option value="<%= info %>"><%= info %></option>
+              <% end %> -->
+            </select>
+            <br>
+
+
+            <%= submit_tag value="Apply", :class => "filter-button"%>
+          <% end %>
+        </div>
+      <!-- </div> -->
+      <div class="cards-container">
+
+     <!--    <% @companies.each do |company_info| %>
+          <% unless company.nil? %> -->
+            <div class="card">
+              <div class="card-information">
+                <div class="card-info-top">
+                  <div class="card-info-title">
+                    <!-- <h4><%= company.job_title %></h4>
+                    <p><%= lawyer_info.practice_area %></p> -->
+                  </div>
+                  <div class="card-info-tags">
+                   <!--  <span class="tag"><%= lawyer_info.job_status %></span>
+                    <span class="tag">£<%= lawyer_info.expected_salary %></span> -->
+                  </div>
+                </div>
+                <div class="card-info-bottom">
+                  <!-- <span>PQE: <%= lawyer_info.pqe %></span>
+                  <span>Current firm: <%= lawyer_info.current_firm %></span>
+                  <span>University: <%= lawyer_info.university %></span> -->
+                </div>
+              </div>
+              <div class="btn-more-info">
+                <%= link_to "More info" , target: :blank %>
+                <%= image_tag 'right_arrow_white.png', class: "arrow", width: 28, height: 59 %>
+              </div>
+            </div>
+
+           <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
