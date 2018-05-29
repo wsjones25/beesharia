@@ -4,6 +4,28 @@
   bottom: 4px;
 }
 
+.btn-get-started {
+  padding: 22px 10px 22px 20px;
+  background-color: #73F0D6;
+  width: 150px;
+  position: relative;
+  border-radius: 10px;
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+
+.btn-get-started:hover {
+  background-color: #5fa99e;
+  color: white;
+  border: none;
+  box-shadow: 0px 0px 1px #5c7773;
+  opacity: 1.0;
+}
+
 //main button styling
 
 // .main-button {
