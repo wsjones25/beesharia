@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2018_05_29_115031) do
   enable_extension "plpgsql"
 
   create_table "companies", force: :cascade do |t|
-    t.integer "company_number"
+    t.string "company_number"
     t.string "company_name"
     t.string "director_names"
     t.integer "years_credit_history"
