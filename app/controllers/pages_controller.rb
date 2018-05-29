@@ -4,7 +4,12 @@ class PagesController < ApplicationController
   def home
   end
 
+  def company_dashboard
+  end
+
+  def investor_dashboard
+  end
+
   def dashboard
-    @company = current_user.company
   end
 end
