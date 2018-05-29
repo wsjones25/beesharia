@@ -1,0 +1,30 @@
+
+<div class="modal fade" id="mySignUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title text-center" id="exampleModalLabel">Let's get started...</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+          <div class="form-inputs">
+            <%= f.input :email, required: true, autofocus: true, label: false, placeholder: 'Email' %>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: false, placeholder: 'Password' %>
+            <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Re-enter password' %>
+            <%= f.input :company, as: :radio_buttons, label: "Are you a borrower or an investor?" %>
+          </div>
+          <div class="form-actions btn-sign-up">
+            <%= f.button :submit, "Sign up" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <h6 class="text-center">T&C privacy policy</h6>
+      </div>
+    </div>
+  </div>
+</div>
