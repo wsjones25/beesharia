@@ -2,7 +2,7 @@ import Typed from 'typed.js';
 
 function loadDynamicBannerText() {
   new Typed('#banner-typed-text', {
-    strings: ["The UK's Only Shariah Compliant", "Lending Marketplace"],
+    strings: ["Ethical investing", "FAC regulated", "Do something interesting with your money"],
     typeSpeed: 50,
     loop: true
   });
