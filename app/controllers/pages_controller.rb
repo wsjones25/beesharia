@@ -11,6 +11,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @companies = Company.all
+    @companies = Company.filter(params)
   end
 end

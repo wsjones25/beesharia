@@ -14,9 +14,39 @@
   </div>
   <div id="invest" class="tab-pane fade">
 
+<div class="filter-container">
+  <%= form_tag pages_dashboard_path, method: :get do %>
+    <h5 >Search Investments</h5 >
 
+        <select class="filter-box" name="business_category">
+        <option value="">Business Category</option>
+          <% Company::BUSINESS_CATEGORY.each do |info| %>
+          <option value="<%= info %>"><%= info %></option>
+          <% end %>
+        </select>
+          <br>
+          <h5 class="h5-title">Loan Type</h5 >
 
+        <select class="filter-box" name="loan_type">
+          <option value="">Loan Type</option>
+          <% Company::LOAN_TYPE.each do |info| %>
+          <option value="<%= info %>"><%= info %></option>
+          <% end %>
+        </select>
+          <br>
+          <h5 class="h5-title">Risk Score</h5 >
 
+          <select class="filter-box" name="risk">
+            <option value="">Risk Score</option>
+            <% Company::RISK_SCORE.each do |info| %>
+            <option value="<%= info %>"><%= info %></option>
+            <% end %>
+          </select>
+
+          <br>
+          <%= submit_tag value="Apply", :class => "filter-button"%>
+          <% end %>
+        </div>
 
     <% @companies.each do |company| %>
       <div class="card">
