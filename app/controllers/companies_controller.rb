@@ -1,8 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :set_companyinfo, only: [:edit, :update]
 
-
-
   def index
   end
 
@@ -26,6 +24,11 @@ class CompaniesController < ApplicationController
       @company.update_attributes(infos)
     end
 
+    ebit = @company.last_year_ebit
+    interest = @company.last_year_interest
+    calc_risk_score(ebit, interest)
+    calc_expected_return(ebit,interest)
+
     if @company.save
       redirect_to company_path(@company)
     else
@@ -46,17 +49,60 @@ class CompaniesController < ApplicationController
   #   redirect_to new_company_path, notice: 'Profile was successfully deleted.'
   # end
 
-
-
-
-
 private
+
+  def calc_risk_score(ebit, interest)
+    int_coverage = ebit/interest
+    if int_coverage  >= 0.05 && int_coverage <= 0.3
+      @company.risk_score = "High Risk"
+    elsif int_coverage >0.3 && int_coverage <= 1.2
+      @company.risk_score = "Medium Risk"
+    elsif int_coverage >1.2
+      @company.risk_score = "Low Risk"
+    end
+  end
+
+  def calc_expected_return(ebit, interest)
+    uk_gilt_10 = 0.013
+    int_coverage = ebit/interest
+    if int_coverage <= 0.05
+      @company.loan_rate = (uk_gilt_10 + 0.186)*100
+    elsif int_coverage > 0.05 && int_coverage <= 0.1
+      @company.loan_rate = (uk_gilt_10 + 0.1395)*100
+    elsif int_coverage > 0.1 && int_coverage <= 0.2
+      @company.loan_rate = (uk_gilt_10 + 0.1063)*100
+    elsif int_coverage > 0.2 && int_coverage <= 0.3
+      @company.loan_rate = (uk_gilt_10 + 0.0864)*100
+    elsif int_coverage > 0.3 && int_coverage <= 0.4
+      @company.loan_rate = (uk_gilt_10 + 0.0437)*100
+    elsif int_coverage > 0.4 && int_coverage <= 0.5
+      @company.loan_rate = (uk_gilt_10 + 0.0357)*100
+    elsif int_coverage > 0.5 && int_coverage <= 0.6
+      @company.loan_rate = (uk_gilt_10 + 0.0298)*100
+    elsif int_coverage > 0.6 && int_coverage <= 0.7
+      @company.loan_rate = (uk_gilt_10 + 0.0238)*100
+    elsif int_coverage > 0.7 && int_coverage <= 0.9
+      @company.loan_rate = (uk_gilt_10 + 0.0198)*100
+    elsif int_coverage > 0.9 && int_coverage <= 1.19
+      @company.loan_rate = (uk_gilt_10 + 0.0127)*100
+    elsif int_coverage > 1.2 && int_coverage <= 1.5
+      @company.loan_rate = (uk_gilt_10 + 0.0113)*100
+    elsif int_coverage > 1.5 && int_coverage <= 2
+      @company.loan_rate = (uk_gilt_10 + 0.0099)*100
+    elsif int_coverage > 2 && int_coverage <= 2.5
+      @company.loan_rate = (uk_gilt_10 + 0.009)*100
+    elsif int_coverage > 2.5 && int_coverage <= 3
+      @company.loan_rate = (uk_gilt_10 + 0.0072)*100
+    elsif int_coverage > 3
+      @company.loan_rate = (uk_gilt_10 + 0.0054)*100
+    end
+  end
+
 
   def get_info_from_api(company_number, company)
     require 'companies_house/client'
     client = CompaniesHouse::Client.new(api_key: ENV['COMPANIES_HOUSE_API_KEY'])
     profile = client.company(company_number)
-    # raise
     infos = {}
     infos[:company_name] = profile['company_name'] if company.company_name.blank?
     infos[:office_address] = "#{profile['registered_office_address']['address_line_1']}, #{profile['registered_office_address']['locality']}, #{profile['registered_office_address']['postal_code']}" if company.office_address.blank?
@@ -71,10 +117,5 @@ private
   def company_params
     params.require(:company).permit(:company_number, :company_name, :director_names,:years_credit_history,:business_category,:office_address, :last_year_ebit, :last_year_interest, :last_year_debt, :last_year_assets, :loan_type,:borrowing_length,:use_of_funds_description,:required_funds, :photo)
   end
-
-
-
-
-
 
 end

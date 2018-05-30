@@ -11,6 +11,7 @@
           <p><strong> Address: </strong> <%= @company.office_address %></p>
           <p><strong> Directors' Names:</strong> <%= @company.director_names %></p>
           <p> <strong> Business Category:</strong> <%= @company.business_category %></p>
+          <p> <strong> Years credit history:</strong> <%= @company.years_credit_history %></p>
         </div>
         <!-- Borrowing requirements  -->
         <div class="sub-info">
@@ -18,6 +19,8 @@
           <p><strong> Required funds:  </strong> £<%= @company.required_funds %> million</p>
           <p><strong> Length:</strong> <%= @company.borrowing_length %> years</p>
           <p><strong> Borrowing type:</strong> <%= @company.loan_type %></p>
+          <p><strong> Expected returns:</strong> <%= @company.loan_rate %></p>
+          <p><strong> Risk score:</strong> <%= @company.risk_score %></p>
         </div>
         <!-- financials  -->
         <div class="sub-info">
@@ -25,14 +28,14 @@
           <p><strong> Last year EBIT: </strong> £<%= @company.last_year_ebit %> million</p>
           <p><strong>Last year interest:  </strong> £<%= @company.last_year_interest %> million </p>
           <p><strong>Last year debt:  </strong> £<%= @company.last_year_debt %> million </p>
-          <p><strong>Last year debt:  </strong> £ <%= @company.last_year_assets %> million</p>
+          <p><strong>Last year assets:  </strong> £ <%= @company.last_year_assets %> million</p>
         </div>
         <% if @company.photo.model[:photo] != nil%>
           <iframe src="http://docs.google.com/gview?url=<%= cl_image_path @company.photo %>&embedded=true", width="300px", height="400px"></iframe>
         <% end %>
 
       </div>
-      <div class="buttons_lawyer_show">
+      <div class="buttons_company_show">
         <%= link_to "Edit", edit_company_path, class: "btn btn-primary custom-button" %>
       </div>
     </div>
