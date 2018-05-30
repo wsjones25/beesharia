@@ -28,11 +28,14 @@
   flex: 1 0 auto;
 }
 
-// filter box CSS
+// filter-bar at top of page styling
+
+.form-custom-inline {
+  display: flex;
+  justify-content: space-around;
+}
 
 .filter-container {
-  width: 400px;
-  height: 330px;
   border: 2px solid #E7E7E7;
   margin: 10px;
   border-radius: 10px;
@@ -54,11 +57,26 @@
   margin-top: 10px;
 }
 
+.filter-button {
+  padding-top: 0px;
+  margin-top: 10px;
+  background-color: #73F0D6;
+  height: 40px;
+  width: 130px;
+  text-align: center;
+  position: relative;
+  border-radius: 10px;
+}
+
+.filter-button:hover {
+  opacity: 0.8;
+}
+
 .h5-title {
   margin-top: 25px;
 }
 
-// navbar tabs
+// navbar tabs styling in css
 
 .nav-tabs > li {
     float:none;

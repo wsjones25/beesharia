@@ -1,40 +1,33 @@
-
 <div class="wrapper">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#summary">Summary</a></li>
+    <li><a data-toggle="tab" href="#invest">Invest</a></li>
+    <li><a data-toggle="tab" href="#funds">Funds Transfer</a></li>
+  </ul>
 
-<ul class="nav nav-tabs">
-  <li class="active"><a data-toggle="tab" href="#summary">Summary</a></li>
-  <li><a data-toggle="tab" href="#invest">Invest</a></li>
-  <li><a data-toggle="tab" href="#funds">Funds Transfer</a></li>
-</ul>
+  <div class="tab-content">
+    <div id="summary" class="tab-pane fade in active">
+      <h3>Summary</h3>
+      <p>Some content.</p>
+    </div>
 
-<div class="tab-content">
-  <div id="summary" class="tab-pane fade in active">
-    <h3>Summary</h3>
-    <p>Some content.</p>
-  </div>
-  <div id="invest" class="tab-pane fade">
+    <div id="invest" class="tab-pane fade">
+      <div class="filter-container">
+        <%= form_tag pages_dashboard_path, method: :get, class: 'form-custom-inline' do %>
+          <h5>Search Investments</h5>
+          <select class="filter-box" name="business_category">
+            <option value="">Business Category</option>
+            <% Company::BUSINESS_CATEGORY.each do |info| %>
+              <option value="<%= info %>"><%= info %></option>
+            <% end %>
+          </select>
 
-<div class="filter-container">
-  <%= form_tag pages_dashboard_path, method: :get do %>
-    <h5 >Search Investments</h5 >
-
-        <select class="filter-box" name="business_category">
-        <option value="">Business Category</option>
-          <% Company::BUSINESS_CATEGORY.each do |info| %>
-          <option value="<%= info %>"><%= info %></option>
-          <% end %>
-        </select>
-          <br>
-          <h5 class="h5-title">Loan Type</h5 >
-
-        <select class="filter-box" name="loan_type">
-          <option value="">Loan Type</option>
-          <% Company::LOAN_TYPE.each do |info| %>
-          <option value="<%= info %>"><%= info %></option>
-          <% end %>
-        </select>
-          <br>
-          <h5 class="h5-title">Risk Score</h5 >
+          <select class="filter-box" name="loan_type">
+            <option value="">Loan Type</option>
+            <% Company::LOAN_TYPE.each do |info| %>
+              <option value="<%= info %>"><%= info %></option>
+            <% end %>
+          </select>
 
           <select class="filter-box" name="risk">
             <option value="">Risk Score</option>
@@ -43,39 +36,39 @@
             <% end %>
           </select>
 
-          <br>
-          <%= submit_tag value="Apply", :class => "filter-button"%>
-          <% end %>
-        </div>
-
-    <% @companies.each do |company| %>
-      <div class="card">
-        <div class="card-information">
-          <div class="card-info-top">
-            <div class="card-info-title">
-              <h4><%= company.risk_score %></h4>
-              <p><%= company.business_category %></p>
+          <%= submit_tag value="Search", :class => "filter-button"%>
+        <% end %>
+      </div>
+      <% @companies.each do |company| %>
+        <div class="card">
+          <div class="card-information">
+            <div class="card-info-top">
+              <div class="card-info-title">
+                <h4><%= company.risk_score %></h4>
+                <p><%= company.business_category %></p>
               </div>
               <div class="card-info-tags">
                 <span class="tag">Return: <%= company.loan_rate %>%</span>
                 <span class="tag">£<%= company.required_funds %></span>
               </div>
             </div>
-              <div class="card-info-bottom">
-                <span>Business Category: <%= company.business_category %></span>
-                <span>Use: <%= company.loan_type %></span>
-                <span>Days Remaining: <%= company.days_remaining %></span>
-              </div>
+            <div class="card-info-bottom">
+              <span>Business Category: <%= company.business_category %></span>
+              <span>Use: <%= company.loan_type %></span>
+              <span>Days Remaining: <%= company.days_remaining %></span>
             </div>
-              <div class="btn-get-started">
+            <div class="btn-get-started">
               <%= link_to "More info", company_path(company), target: :blank %>
               <%= image_tag 'right_arrow_white.png', class: "arrow", width: 28, height: 59 %>
             </div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
+    </div>
+
     <div id="funds" class="tab-pane fade">
-    <h3>Menu 2</h3>
-    <p>Some content in menu 2.</p>
+      <h3>Menu 2</h3>
+      <p>Some content in menu 2.</p>
+    </div>
   </div>
 </div>
