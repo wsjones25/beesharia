@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   # has_many :topups, :investments
-  belongs_to :company
+  has_many :companies
 
 end

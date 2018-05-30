@@ -1,11 +1,15 @@
 import Typed from 'typed.js';
 
+
 function loadDynamicBannerText() {
-  new Typed('#banner-typed-text', {
-    strings: ["The UK's Only Shariah Compliant", "Lending Marketplace"],
-    typeSpeed: 50,
-    loop: true
-  });
+  const banner = document.getElementById('banner-typed-text')
+  if (banner) {
+    new Typed('#banner-typed-text', {
+      strings: ["Ethical investing", "FAC regulated", "Do something interesting with your money"],
+      typeSpeed: 50,
+      loop: true
+    });
+  }
 }
 
 export { loadDynamicBannerText };

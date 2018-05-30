@@ -1,9 +1,83 @@
-.home-headers h1 {
-  color: #171236;
-  font-family: 'Roboto', sans-serif;
+
+.white-background {
+  background-color: white;
+  height: 100vh;
+  margin-top: 0px;
+  margin-bottom: -200px;
 }
 
-h3 {
+// div for h1 and h2 elements positioning. font style and size
+
+
+.home-headers {
+  padding-top: 20px;
+  padding-left: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.home-headers h1 {
+  font-size: 50px;
+  color: #171236;
+  font-weight: bold;
+  font-family: 'Asap', sans-serif;
+  width: 700px;
+}
+
+.home-headers h3 {
+  font-size: 25px;
   color: #73F0D6;
   font-family: 'Asap', sans-serif;
+}
+
+
+// home buttons
+
+.btn-get-started-home {
+  padding: 22px 10px 22px 20px;
+  background-color: #73F0D6;
+  width: 150px;
+  position: relative;
+  border-radius: 10px;
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+
+.btn-get-started-home:hover {
+  color: white;
+  border: none;
+  box-shadow: 0px 0px 1px #5c7773;
+  opacity: 0.8;
+}
+
+// footer styling
+
+.footer-links {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.flex-home-image {
+  display: flex;
+}
+
+// second home page section
+
+.second-section-blue {
+  height: 100px;
+  width: 100%;
+  background-color: #171236;
+  color: white;
+}
+
+.second-section-blue h5 {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
 }

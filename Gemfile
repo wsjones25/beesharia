@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.4.4'
 
+gem 'companies-house-rest', '~> 0.4.3'
+
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'figaro'
