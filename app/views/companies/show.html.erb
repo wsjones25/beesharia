@@ -30,9 +30,9 @@
           <p><strong>Last year debt:  </strong> £<%= @company.last_year_debt %> million </p>
           <p><strong>Last year assets:  </strong> £ <%= @company.last_year_assets %> million</p>
         </div>
-        <% if @company.photo.model[:photo] != nil%>
-          <iframe src="http://docs.google.com/gview?url=<%= cl_image_path @company.photo %>&embedded=true", width="300px", height="400px"></iframe>
-        <% end %>
+        <%# if @company.doc_accounts != nil%>
+          <!-- <iframe src="http://docs.google.com/gview?url=<%#= cl_image_path @company.doc_accounts %>&embedded=true", width="300px", height="400px"></iframe> -->
+        <%# end %>
 
       </div>
       <div class="buttons_company_show">

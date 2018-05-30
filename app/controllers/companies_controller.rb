@@ -19,10 +19,10 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
     @company.user = current_user
 
-    if @company.company_number
-      infos = get_info_from_api(@company.company_number, @company)
-      @company.update_attributes(infos)
-    end
+    # if @company.company_number
+    #   infos = get_info_from_api(@company.company_number, @company)
+    #   @company.update_attributes(infos)
+    # end
 
     ebit = @company.last_year_ebit
     interest = @company.last_year_interest
@@ -115,7 +115,7 @@ private
   end
 
   def company_params
-    params.require(:company).permit(:company_number, :company_name, :director_names,:years_credit_history,:business_category,:office_address, :last_year_ebit, :last_year_interest, :last_year_debt, :last_year_assets, :loan_type,:borrowing_length,:use_of_funds_description,:required_funds, :photo)
+    params.require(:company).permit(:company_number, :company_name, :director_names,:years_credit_history,:business_category,:office_address, :last_year_ebit, :last_year_interest, :last_year_debt, :last_year_assets, :loan_type,:borrowing_length,:use_of_funds_description,:required_funds, :photo, :doc_accounts, :doc_bank_statements)
   end
 
 end

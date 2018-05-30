@@ -14,9 +14,10 @@
   <%= f.input :use_of_funds_description %>
   <%= f.input :required_funds %>
   <div class="doc-input">
-    <%#= f.input :doc_accounts, label: "Financial Statements" %>
-    <%#= f.input :doc_bank_statements, label: "Bank Statements" %>
-    <%#= f.input :photo, as: :hidden %>
+    <%= f.input :doc_accounts, label: "Financial Accounts" %>
+    <%= f.input :doc_accounts_cache, as: :hidden %>
+    <%= f.input :doc_bank_statements , label: "Bank Statements" %>
+    <%= f.input :doc_bank_statements_cache, as: :hidden %>
   </div>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
