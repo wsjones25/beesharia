@@ -1,23 +1,32 @@
-<%= simple_form_for(@company) do |f| %>
-  <%= f.input :company_number %>
-  <%= f.input :company_name %>
-  <%= f.input :director_names %>
-  <%= f.input :years_credit_history %>
-  <%= f.input :business_category, collection: ["Manufacturing", "Construction", "Agriculture", "Financial and Business Services", "Education and Health Work", "Hotels and Restaurants", "Real Estate and Renting", "Tourism", "Transport, Storage, and Communication", "Wholesale and Retail Trade"]%>
-  <%= f.input :office_address %>
-  <%= f.input :last_year_ebit %>
-  <%= f.input :last_year_interest %>
-  <%= f.input :last_year_debt %>
-  <%= f.input :last_year_assets %>
-  <%= f.input :loan_type, collection: ["Working Capital", "Asset Finance/Refinance", "Expansion Capital"] %>
-  <%= f.input :borrowing_length, collection: [1, 2, 3, 4, 5] %>
-  <%= f.input :use_of_funds_description %>
-  <%= f.input :required_funds %>
-  <div class="doc-input">
-    <%= f.input :photo, label: "Financial Statements" %>
-    <%= f.input :photo, label: "Bank Statements" %>
-    <%= f.input :photo, label: "User funds description" %>
-    <%= f.input :photo, as: :hidden %>
-  </div>
-  <%= f.button :submit, class: "btn btn-primary" %>
-<% end %>
+<div class="modal-content">
+  <h4 class="modal-header text-center">We need a bit more info - it will only take you 2 mins...</h4>
+    <div class="parent-inputs">
+      <div class="row">
+        <%= simple_form_for(@company) do |f| %>
+          <div class="col-xs-12 col-md-6">
+            <div class="inputs"><%= f.input :company_number %></div>
+            <div class="inputs"><%= f.input :company_name %></div>
+            <div class="inputs"><%= f.input :director_names %></div>
+            <div class="inputs"><%= f.input :years_credit_history %></div>
+            <div class="inputs"><%= f.input :business_category, collection: ["Manufacturing", "Construction", "Agriculture", "Financial and Business Services", "Education and Health Work", "Hotels and Restaurants", "Real Estate and Renting", "Tourism", "Transport, Storage, and Communication", "Wholesale and Retail Trade"]%></div>
+            <div class="inputs"><%= f.input :office_address %></div>
+            <div class="inputs"><%= f.input :last_year_ebit %></div>
+            <div class="inputs"><%= f.input :last_year_interest %></div>
+            <div class="inputs"><%= f.input :last_year_debt %></div>
+            <div class="inputs"><%= f.input :last_year_assets %></div>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <div class="inputs"><%= f.input :loan_type, collection: ["Working Capital", "Asset Finance/Refinance", "Expansion Capital"] %></div>
+            <div class="inputs"><%= f.input :borrowing_length, collection: [1, 2, 3, 4, 5] %></div>
+            <div class="inputs"><%= f.input :use_of_funds_description %></div>
+            <div class="inputs"><%= f.input :required_funds %></div>
+            <div class="inputs"><%= f.input :photo, label: "Financial Statements" %></div>
+            <div class="inputs"><%= f.input :photo, label: "Bank Statements" %></div>
+            <div class="inputs"><%= f.input :photo, label: "User funds description" %></div>
+            <div class="inputs"><%= f.input :photo, as: :hidden %></div>
+            <div class="inputs"><%= f.button :submit, class: "btn" %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</div>

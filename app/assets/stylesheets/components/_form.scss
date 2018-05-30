@@ -4,11 +4,19 @@
   margin-bottom: 10px;
 }
 
+.form-control-label {
+  font-weight: medium !important;
+}
+
 .modal-content {
   border: 2px solid #73F0D6;
   border-radius: 20px;
   font-family: 'Asap', sans-serif;
   padding: 20px;
+  margin-top: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .modal-body {
@@ -50,4 +58,16 @@ legend {
 label {
   font-weight: medium;
 }
+
+h6 a {
+  font-size: 16px;
+  color: #171236;
+  text-decoration: none;
+}
+
+
+
+
+
+
 
