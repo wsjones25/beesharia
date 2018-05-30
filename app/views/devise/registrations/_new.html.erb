@@ -15,7 +15,7 @@
             <%= f.input :email, required: true, autofocus: true, label: false, placeholder: 'Email' %>
             <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: false, placeholder: 'Password' %>
             <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Re-enter password' %>
-            <%= f.input :company, as: :radio_buttons, label: "Are you a borrower or an investor?" %>
+            <%= f.input :borrower, as: :radio_buttons, collection: [["Investor", false], ["Borrower", true]], label: "Are you a borrower or an investor?", checked: ["Investor", false] %>
           </div>
           <div class="form-actions btn-sign-up">
             <%= f.button :submit, "Sign up" %>

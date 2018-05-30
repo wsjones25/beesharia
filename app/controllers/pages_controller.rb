@@ -5,6 +5,11 @@ class PagesController < ApplicationController
   end
 
   def company_dashboard
+    # Compute the total required funds
+    @required_funds = current_user.companies.first.required_funds
+
+    # Compute the amount pledged
+
   end
 
   def investor_dashboard

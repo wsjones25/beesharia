@@ -1,8 +1,12 @@
 class Company < ApplicationRecord
   belongs_to :user
+  has_many :investments
   mount_uploader :photo, PhotoUploader
-  validates :company_name, :last_year_ebit, :last_year_interest, :last_year_debt, :last_year_assets, presence: true
+  mount_uploader :doc_accounts, PhotoUploader
+  mount_uploader :doc_bank_statements, PhotoUploader
 
+  validates :company_name, :last_year_ebit, :last_year_interest, :last_year_debt, :last_year_assets, :years_credit_history, :borrowing_length, :required_funds, presence: true
+  
   BUSINESS_CATEGORY = ["Manufacturing", "Construction", "Agriculture", "Financial and Business Services", "Education and Health Work", "Hotels and Restaurants", "Real Estate and Renting", "Tourism", "Transport, Storage, and Communication", "Wholesale and Retail Trade"]
   LOAN_TYPE = ["Working Capital", "Asset Finance/Refinance", "Expansion Capital"]
   RISK_SCORE = ["Low Risk", "Medium Risk", "High Risk"]
