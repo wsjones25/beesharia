@@ -2,6 +2,7 @@ class CompaniesController < ApplicationController
   before_action :set_companyinfo, only: [:edit, :update]
 
   def index
+    @companies = Company.all
   end
 
   def edit
