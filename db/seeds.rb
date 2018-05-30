@@ -28,7 +28,7 @@ company_one = Company.create!(company_number: "08933368",
                                required_funds: 100000,
                                days_remaining: 24,
                                loan_rate: 7.22,
-                               user_id: user_one)
+                               user: user_one)
 
 user_two = User.create!(email: "owen@gmail.com", password: "123456", company: true)
 company_one = Company.create!(company_number: "07933368",
@@ -47,7 +47,7 @@ company_one = Company.create!(company_number: "07933368",
                                required_funds: 50000,
                                days_remaining: 24,
                                loan_rate: 7.22,
-                               user_id: user_two)
+                               user: user_two)
 
 user_three = User.create!(email: "will@gmail.com", password: "123456", company: true)
 company_three = Company.create!(company_number: "02933368",
@@ -66,7 +66,7 @@ company_three = Company.create!(company_number: "02933368",
                                  required_funds: 50000,
                                  days_remaining: 12,
                                  loan_rate: 9.22,
-                                 user_id: user_three)
+                                 user: user_three)
 
 user_four = User.create!(email: "hassan@gmail.com", password: "123456", company: true)
 company_four = Company.create!(company_number: "01933368",
@@ -85,7 +85,7 @@ company_four = Company.create!(company_number: "01933368",
                                required_funds: 10000,
                                days_remaining: 29,
                                loan_rate: 3.29,
-                               user_id: user_four)
+                               user: user_four)
 
 
 user_five = User.create!(email: "hassaninvestor@gmail.com", password: "123456", company: false)
