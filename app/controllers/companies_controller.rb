@@ -1,4 +1,7 @@
 class CompaniesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  protect_from_forgery prepend: true, with: :exception
+  before_action :authenticate_user!
   before_action :set_companyinfo, only: [:edit, :update]
 
   def index
@@ -9,7 +12,7 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    @company = Company.find_by(user_id: current_user)
+    @company = Company.find(params[:id])
   end
 
   def new
