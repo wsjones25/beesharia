@@ -1,3 +1,5 @@
+// page structure css
+
 .wrapper {
   background-color: #ECECEC;
   margin: 0px;
@@ -26,6 +28,8 @@
   flex: 1 0 auto;
 }
 
+// filter box CSS
+
 .filter-container {
   width: 400px;
   height: 330px;
@@ -52,4 +56,16 @@
 
 .h5-title {
   margin-top: 25px;
+}
+
+// navbar tabs
+
+.nav-tabs > li {
+    float:none;
+    display:inline-block;
+    zoom:1;
+}
+
+.nav-tabs {
+    text-align:center;
 }

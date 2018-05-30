@@ -16,5 +16,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @companies = Company.all
   end
 end
