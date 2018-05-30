@@ -1,3 +1,4 @@
+
 <div class="modal-content">
   <h4 class="modal-header text-center">We need a bit more info - it will only take you 2 mins...</h4>
     <div class="parent-inputs">
@@ -20,13 +21,14 @@
             <div class="inputs"><%= f.input :borrowing_length, collection: [1, 2, 3, 4, 5] %></div>
             <div class="inputs"><%= f.input :use_of_funds_description %></div>
             <div class="inputs"><%= f.input :required_funds %></div>
-            <div class="inputs"><%= f.input :photo, label: "Financial Statements" %></div>
-            <div class="inputs"><%= f.input :photo, label: "Bank Statements" %></div>
-            <div class="inputs"><%= f.input :photo, label: "User funds description" %></div>
-            <div class="inputs"><%= f.input :photo, as: :hidden %></div>
+            <div class="inputs"><%= f.input :doc_accounts, label: "Financial Accounts" %></div>
+            <div class="inputs"><%= f.input :doc_accounts_cache, as: :hidden %></div>
+            <div class="inputs"><%= f.input :doc_bank_statements , label: "Bank Statements" %></div>
+            <div class="inputs"><%= f.input :doc_bank_statements_cache, as: :hidden %></div>
             <div class="inputs"><%= f.button :submit, class: "btn" %></div>
           </div>
         <% end %>
       </div>
     </div>
 </div>
+
