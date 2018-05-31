@@ -13,10 +13,13 @@ class PagesController < ApplicationController
   end
 
   def investor_dashboard
+
   end
 
   def dashboard
     # @companies = Company.filter(params)
     @companies = Company.all
+    @topup = current_user.topups
+    @topup = Topup.new
   end
 end
