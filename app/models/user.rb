@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   # has_many :topups, :investments
   has_many :companies
-
+  has_many :topups
+  has_many :investments
 end

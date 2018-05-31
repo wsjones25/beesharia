@@ -2,6 +2,7 @@ class InvestmentsController < ApplicationController
 
   def index
     @investments = Investment.all
+    @balance = user.balance(current_user)
   end
 
   def show
@@ -14,7 +15,6 @@ class InvestmentsController < ApplicationController
 
   def create
     @Investment = Investment.create(investment_params)
-
   end
 
 
