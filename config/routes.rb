@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get "pages/dashboard", to: "pages#dashboard"
   get "pages/company_dashboard", to: "pages#company_dashboard"
   devise_for :users, controllers: { registrations: "registrations" }
+  resources :topups, only: [:new, :create, :show] do
+      resources :payments, only: [:new, :create]
+    end
 
 end
 
