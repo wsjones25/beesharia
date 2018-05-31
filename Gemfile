@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.4.4'
 
 gem 'companies-house-rest', '~> 0.4.3'
+gem "letter_opener", group: :development
 
 gem 'bootsnap', require: false
 gem 'devise'

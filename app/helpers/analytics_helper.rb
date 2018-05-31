@@ -16,7 +16,7 @@ module AnalyticsHelper
       arr << investment.credit_amount * Company.find(investment.company_id).loan_rate
     end
     total_return = arr.reduce(0) {|sum, num| sum + num }
-    portfolio_return = (total_return/investments)/100
+    #portfolio_return = (total_return/investments)/100
   end
 
 end
