@@ -5,8 +5,13 @@ class Company < ApplicationRecord
   mount_uploader :doc_accounts, PhotoUploader
   mount_uploader :doc_bank_statements, PhotoUploader
 
-  validates :company_name, :last_year_ebit, :last_year_interest, :last_year_debt, :last_year_assets, :years_credit_history, :borrowing_length, :required_funds, presence: true
-  
+  validates :company_name, :years_credit_history, :borrowing_length, :required_funds, presence: true
+  validates :last_year_ebit, numericality: { only_integer: true, less_than: 100 }
+  validates :last_year_interest, numericality: { only_integer: true, less_than: 100 }
+  validates :last_year_debt, numericality: { only_integer: true, less_than: 100 }
+  validates :last_year_assets, numericality: { only_integer: true, less_than: 100 }
+
+
   BUSINESS_CATEGORY = ["Manufacturing", "Construction", "Agriculture", "Financial and Business Services", "Education and Health Work", "Hotels and Restaurants", "Real Estate and Renting", "Tourism", "Transport, Storage, and Communication", "Wholesale and Retail Trade"]
   LOAN_TYPE = ["Working Capital", "Asset Finance/Refinance", "Expansion Capital"]
   RISK_SCORE = ["Low Risk", "Medium Risk", "High Risk"]
