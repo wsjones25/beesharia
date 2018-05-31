@@ -30,14 +30,20 @@
           <p><strong>Last year debt:  </strong> £<%= @company.last_year_debt %> million </p>
           <p><strong>Last year assets:  </strong> £ <%= @company.last_year_assets %> million</p>
         </div>
-        <%# if @company.doc_accounts != nil%>
-          <!-- <iframe src="http://docs.google.com/gview?url=<%#= cl_image_path @company.doc_accounts %>&embedded=true", width="300px", height="400px"></iframe> -->
-        <%# end %>
+        <% unless @company.doc_accounts.blank? %>
+          <iframe src="http://docs.google.com/gview?url=<%= cl_image_path @company.doc_accounts %>&embedded=true", width="300px", height="400px"></iframe>
+        <% end %>
 
       </div>
-      <div class="buttons_company_show">
-        <%= link_to "Edit", edit_company_path, class: "btn btn-primary custom-button" %>
-      </div>
+      <% if current_user.borrower  %>
+        <div class="buttons_company_show">
+          <%= link_to "Edit", edit_company_path, class: "btn btn-primary custom-button" %>
+        </div>
+        <% else  %>
+        <!-- TO REROUTE TO INVESTMENT NEW PAGE  -->
+          <%= render 'investments/form_pledge', company: @company, investment: @investment %>
+          <%#= link_to "Pledge", investment_path, class: "btn btn-primary custom-button" %>
+      <% end %>
     </div>
   </div>
 </div>

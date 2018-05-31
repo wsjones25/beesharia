@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_31_103656) do
+ActiveRecord::Schema.define(version: 2018_05_31_152126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "companies", force: :cascade do |t|
-    t.integer "company_number"
+    t.string "company_number"
     t.string "company_name"
     t.string "director_names"
     t.integer "years_credit_history"
@@ -52,11 +52,19 @@ ActiveRecord::Schema.define(version: 2018_05_31_103656) do
     t.index ["user_id"], name: "index_investments_on_user_id"
   end
 
-  create_table "topups", force: :cascade do |t|
-    t.bigint "user_id"
-    t.integer "amount"
+  create_table "payments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "topups", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "amount_cents", default: 0, null: false
+    t.string "topup_sku"
+    t.jsonb "payment_info"
+    t.string "state"
     t.index ["user_id"], name: "index_topups_on_user_id"
   end
 
@@ -73,10 +81,7 @@ ActiveRecord::Schema.define(version: 2018_05_31_103656) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "borrower"
-    t.integer "balance"
-    t.integer "investment_total"
-    t.float "avg_expected_return"
+    t.boolean "borrower", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
