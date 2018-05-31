@@ -3,17 +3,17 @@
   background-color: white;
   height: 100vh;
   margin-top: 0px;
-  margin-bottom: -200px;
+  margin-bottom: -100px;
 }
 
 // div for h1 and h2 elements positioning. font style and size
 
 
 .home-headers {
-  padding-top: 20px;
+  padding-top: 100px;
   padding-left: 200px;
   display: flex;
-  align-items: center;
+  align-items: top;
 }
 
 .home-headers h1 {
@@ -34,11 +34,12 @@
 // home buttons
 
 .btn-get-started-home {
-  padding: 22px 10px 22px 20px;
-  background-color: #73F0D6;
+  padding: 22px 20px 22px 20px;
+  background-color: #171236;
   width: 150px;
   position: relative;
   border-radius: 10px;
+  margin-top: 50px;
   a {
     color: white;
     text-decoration: none;
@@ -71,13 +72,23 @@
 
 .second-section-blue {
   height: 100px;
-  width: 100%;
+  width: 50%;
   background-color: #171236;
   color: white;
+  border-radius: 10px;
+  margin: auto;
 }
 
 .second-section-blue h5 {
   text-align: center;
   padding: 20px;
   font-style: italic;
+}
+
+.background-home {
+  height: 300px;
+  background-size: cover;
+  margin: -30px;
+  margin-top: -520px;
+  bottom: 0px;
 }
