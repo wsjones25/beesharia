@@ -35,9 +35,14 @@
         <%# end %>
 
       </div>
-      <div class="buttons_company_show">
-        <%= link_to "Edit", edit_company_path, class: "btn btn-primary custom-button" %>
-      </div>
+      <% if current_user.borrower  %>
+        <div class="buttons_company_show">
+          <%= link_to "Edit", edit_company_path, class: "btn btn-primary custom-button" %>
+        </div>
+        <% else  %>
+        <!-- TO REROUTE TO INVESTMENT NEW PAGE  -->
+          <%= link_to "Pledge", investment_path, class: "btn btn-primary custom-button" %>
+      <% end %>
     </div>
   </div>
 </div>
