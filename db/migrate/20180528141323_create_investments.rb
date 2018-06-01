@@ -1,7 +1,7 @@
 class CreateInvestments < ActiveRecord::Migration[5.2]
   def change
     create_table :investments do |t|
-      t.integer :credit_amount
+      t.integer :credit_amount, default: 0
       t.references :company, foreign_key: true
       t.references :user, foreign_key: true
 
