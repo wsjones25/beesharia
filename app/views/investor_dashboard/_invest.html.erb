@@ -1,0 +1,65 @@
+
+<div class="container-fluid">
+
+  <div class="row">
+
+
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="filter-container">
+        <%= form_tag pages_dashboard_path, method: :get, class: 'form-custom-inline' do %>
+          <select class="filter-box" name="business_category">
+            <option value="">Business Category</option>
+            <% Company::BUSINESS_CATEGORY.each do |info| %>
+              <option value="<%= info %>"><%= info %></option>
+            <% end %>
+          </select>
+
+          <select class="filter-box" name="loan_type">
+            <option value="">Loan Type</option>
+            <% Company::LOAN_TYPE.each do |info| %>
+              <option value="<%= info %>"><%= info %></option>
+            <% end %>
+          </select>
+
+          <select class="filter-box" name="risk">
+            <option value="">Risk Score</option>
+            <% Company::RISK_SCORE.each do |info| %>
+            <option value="<%= info %>"><%= info %></option>
+            <% end %>
+          </select>
+
+          <%= submit_tag value="Search", :class => "filter-button", id: "filter" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <% companies.each do |company| %>
+        <div class="card">
+          <div class="card-information">
+            <div class="card-info-top">
+              <div class="card-info-title">
+                <h4><%= company.risk_score %></h4>
+                <p><%= company.business_category %></p>
+              </div>
+              <div class="card-info-tags">
+                <span class="tag">Return: <%= company.loan_rate %>%</span>
+                <span class="tag">£<%= company.required_funds %></span>
+              </div>
+            </div>
+            <div class="card-info-bottom">
+              <span>Business Category: <%= company.business_category %></span>
+              <span>Use: <%= company.loan_type %></span>
+              <span>Days Remaining: <%= company.days_remaining %></span>
+            </div>
+            <div class="btn-get-started">
+              <%= link_to "More info", company_path(company), target: :blank %>
+              <%= image_tag 'right_arrow_white.png', class: "arrow", width: 28, height: 59 %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>

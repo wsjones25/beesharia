@@ -39,6 +39,8 @@
   padding: 25px 50px;
   background-color: white;
   position: sticky;
+  border: 2px solid #E7E7E7;
+  border-radius: 10px;
 }
 
 .filter-box {
@@ -90,6 +92,7 @@
 
 .nav-tabs > li.active > a {
   background-color: white;
+  top-border-radius: 5px;
 }
 
 // Funds Tab
