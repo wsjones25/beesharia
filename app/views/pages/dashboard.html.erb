@@ -1,84 +1,22 @@
 <div class="wrapper">
-  <ul class="nav nav-tabs">
-    <li><a data-toggle="tab" href="#summary">Summary</a></li>
-    <li class="active"><a data-toggle="tab" href="#invest">Invest</a></li>
-    <li><a data-toggle="tab" href="#funds">Funds Transfer</a></li>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Invest</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Summary</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">transfer</a></li>
   </ul>
 
+  <!-- Tab panes -->
   <div class="tab-content">
-    <div id="summary" class="tab-pane fade">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h3>Current Balance</h3>
-       <p><%= balance %></p>
+    <div role="tabpanel" class="tab-pane active" id="home">
+      <%= render 'investor_dashboard/invest', companies: @companies %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="profile">
+      <%= render 'investor_dashboard/summary' %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="messages">
+      <%= render 'investor_dashboard/funds' %>
     </div>
   </div>
-
-
-    <div id="invest" class="tab-pane fade in active">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="filter-container">
-        <%= form_tag pages_dashboard_path, method: :get, class: 'form-custom-inline' do %>
-          <select class="filter-box" name="business_category">
-            <option value="">Business Category</option>
-            <% Company::BUSINESS_CATEGORY.each do |info| %>
-              <option value="<%= info %>"><%= info %></option>
-            <% end %>
-          </select>
-
-          <select class="filter-box" name="loan_type">
-            <option value="">Loan Type</option>
-            <% Company::LOAN_TYPE.each do |info| %>
-              <option value="<%= info %>"><%= info %></option>
-            <% end %>
-          </select>
-
-          <select class="filter-box" name="risk">
-            <option value="">Risk Score</option>
-            <% Company::RISK_SCORE.each do |info| %>
-            <option value="<%= info %>"><%= info %></option>
-            <% end %>
-          </select>
-
-          <%= submit_tag value="Search", :class => "filter-button", id: "filter" %>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <% @companies.each do |company| %>
-        <div class="card">
-          <div class="card-information">
-            <div class="card-info-top">
-              <div class="card-info-title">
-                <h4><%= company.risk_score %></h4>
-                <p><%= company.business_category %></p>
-
-              </div>
-              <div class="card-info-tags">
-                <span class="tag">Return: <%= company.loan_rate %>%</span>
-                <span class="tag">£<%= company.required_funds %></span>
-              </div>
-            </div>
-            <div class="card-info-bottom">
-              <span>Business Category: <%= company.business_category %></span>
-              <span>Use: <%= company.loan_type %></span>
-              <span>Days Remaining: <%= company.days_remaining %></span>
-            </div>
-            <div class="btn-get-started">
-              <%= link_to "More info", company_path(company), target: :blank %>
-              <%= image_tag 'right_arrow_white.png', class: "arrow", width: 28, height: 59 %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-    <div id="funds" class="tab-pane fade">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3 funds-styling">
-        <h3 id="payments-h3">Add funds to your account</h3>
-        <p><%= render 'topups/show' %></p>
-      </div>
-    </div>
-
 </div>
+
