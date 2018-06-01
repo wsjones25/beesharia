@@ -8,8 +8,8 @@
 
 
 Company.destroy_all
+Topup.destroy_all
 User.destroy_all
-
 
 user_one = User.create!(email: "ben@gmail.com", password: "123456", borrower: true)
 company_one = Company.create!(company_number: "08933368",
