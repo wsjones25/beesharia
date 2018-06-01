@@ -19,8 +19,6 @@
           <p><strong> Required funds:  </strong> £<%= @company.required_funds %> million</p>
           <p><strong> Length:</strong> <%= @company.borrowing_length %> years</p>
           <p><strong> Borrowing type:</strong> <%= @company.loan_type %></p>
-          <p><strong> Expected returns:</strong> <%= @company.loan_rate %></p>
-          <p><strong> Risk score:</strong> <%= @company.risk_score %></p>
         </div>
         <!-- financials  -->
         <div class="sub-info">
@@ -33,18 +31,26 @@
         <% unless @company.doc_accounts.blank? %>
           <iframe src="http://docs.google.com/gview?url=<%= cl_image_path @company.doc_accounts %>&embedded=true", width="300px", height="400px"></iframe>
         <% end %>
-
       </div>
-      <% if current_user.borrower  %>
-        <div class="buttons_company_show">
-          <%= link_to "Edit", edit_company_path, class: "btn btn-primary custom-button" %>
-        </div>
-        <% else  %>
-        <!-- TO REROUTE TO INVESTMENT NEW PAGE  -->
-          <%= render 'investments/form_pledge', company: @company, investment: @investment %>
-          <%#= link_to "Pledge", investment_path, class: "btn btn-primary custom-button" %>
-      <% end %>
+
     </div>
+  </div>
+  <div class="container_company_actions">
+    <div class="div">
+       <div class="sub-info">
+         <p class="subheading"> <strong> Company risk profile and cost of capital</strong></p>
+         <p><strong> Risk score:</strong> <%= @company.risk_score %></p>
+         <p><strong> Expected returns:</strong> <%= @company.loan_rate %> % </p>
+       <% if current_user.borrower  %>
+       <div class="buttons_company_show">
+           <%= link_to "Edit", edit_company_path, class: "btn btn-primary custom-button" %>
+         </div>
+         <% else  %>
+         <!-- TO REROUTE TO INVESTMENT NEW PAGE  -->
+           <%= render 'investments/form_pledge', company: @company, investment: @investment %>
+           <%#= link_to "Pledge", investment_path, class: "btn btn-primary custom-button" %>
+       <% end %>
+     </div>
   </div>
 </div>
 
