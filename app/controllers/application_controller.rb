@@ -5,6 +5,14 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def after_sign_in_path_for(resource)
+    if current_user.borrower
+      company_path(current_user.companies.first)
+    else
+      pages_dashboard_path
+    end
+  end
+
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
     devise_parameter_sanitizer.permit(:sign_up, keys: [:borrower])
