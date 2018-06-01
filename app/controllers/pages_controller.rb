@@ -17,8 +17,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    # @companies = Company.filter(params)
-    @companies = Company.all
+    @companies = Company.filter(params)
     @topup = current_user.topups
     @topup = Topup.new
   end
