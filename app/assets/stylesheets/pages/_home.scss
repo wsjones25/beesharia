@@ -1,14 +1,11 @@
-
 .white-background {
   background-color: white;
   height: 100vh;
   margin-top: 0px;
-  margin-bottom: -100px;
+  margin-bottom: -80px;
 }
 
 // div for h1 and h2 elements positioning. font style and size
-
-
 .home-headers {
   padding-top: 100px;
   padding-left: 200px;
@@ -30,9 +27,7 @@
   font-family: 'Asap', sans-serif;
 }
 
-
 // home buttons
-
 .btn-get-started-home {
   padding: 22px 20px 22px 20px;
   background-color: #171236;
@@ -56,7 +51,6 @@
 }
 
 // footer styling
-
 .footer-links {
   text-align: center;
   position: fixed;
@@ -68,27 +62,10 @@
   display: flex;
 }
 
-// second home page section
-
-.second-section-blue {
-  height: 100px;
-  width: 50%;
-  background-color: #171236;
-  color: white;
-  border-radius: 10px;
-  margin: auto;
-}
-
-.second-section-blue h5 {
-  text-align: center;
-  padding: 20px;
-  font-style: italic;
-}
-
 .background-home {
-  height: 300px;
+  height: 500px;
   background-size: cover;
   margin: -30px;
-  margin-top: -520px;
+  margin-top: -420px;
   bottom: 0px;
 }
