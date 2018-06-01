@@ -1,17 +1,35 @@
 /* Main navbar */
-.navbar-wagon {
+
+@media(max-width: 800px) {
+  .navbar-beesharia {
+    padding: 0px 20px;
+  }
+}
+
+@media(min-width: 800px) and (max-width: 1200px) {
+  .navbar-beesharia {
+    padding: 0px 50px;
+  }
+}
+
+@media(min-width: 1200px) {
+  .navbar-beesharia {
+    padding: 0px 200px;
+  }
+}
+
+.navbar-beesharia {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
   transition: all 0.3s ease;
-  height: 70px;
-  padding: 0px 200px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 /* Logo */
-.navbar-wagon-brand img {
+.navbar-beesharia-logo img {
   height: 50px;
 }
 
@@ -23,26 +41,39 @@
 }
 
 /* Right section */
-.navbar-wagon-right {
+.navbar-beesharia-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 15px;
 }
 
 /* Basic navbar item */
-.navbar-wagon-item {
+.navbar-beesharia-item {
   cursor: pointer;
-  padding: 0 20px;
+  padding: 10px 20px;
+  margin-left: 15px;
 }
 
 /* Navbar link */
-.navbar-wagon-link {
-  color: #616668;
-  font-size: 14px;
+.navbar-beesharia-link {
+  color: #73F0D6;
 }
-.navbar-wagon-link:hover {
-  color: #da552f;
+
+.btn-sign-in {
+  color: #73F0D6;
+  border: 2px solid #73F0D6;
+  border-radius: 20px;
+}
+
+.btn-sign-in:hover {
+  color: white;
+  background-color: #73F0D6;
   text-decoration: none;
+}
+
+.navbar-wagon-link:hover {
+  text-decoration: underline;
 }
 
 /* Dropdown menu */
