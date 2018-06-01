@@ -1,6 +1,6 @@
 class Company < ApplicationRecord
   belongs_to :user
-  has_many :investments
+  has_many :investments, dependent: :destroy
   mount_uploader :photo, PhotoUploader
   mount_uploader :doc_accounts, PhotoUploader
   mount_uploader :doc_bank_statements, PhotoUploader
