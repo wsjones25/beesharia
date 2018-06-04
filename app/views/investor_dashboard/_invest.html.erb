@@ -22,7 +22,7 @@
       <% end %>
     </select>
 
-    <%= submit_tag value="Search", :class => "filter-button", id: "filter" %>
+    <%= submit_tag value="Search", class: "filter-button", id: "filter" %>
   <% end %>
 </div>
 
@@ -35,22 +35,29 @@
         <h4><%= company.loan_type %> loan</h4>
       </div>
       <div class="days_remaining">
-        <h6>0 days left</h6>
+        <% if ((company.created_at.to_date + 30 - Date.today).to_i) == 0 %>
+          <h7>The campaign has finished!</h7>
+        <% else %>
+          <h7><%= ((company.created_at.to_date + 30 - Date.today).to_i) %> days left</h7>
+        <% end %>
       </div>
     </div>
 
     <div class="main-info">
-      <div class="details">
-        <div class="card-info-tags">
-          <span class="tag">£<%= company.required_funds %> target</span>
-          <span class="tag"><%= company.loan_rate %>% return</span>
-          <span class="tag"><%= company.investments.map(&:user_id).count %> investors</span>
+      <div class="card-info-tags">
+        <span class="tag">£<%= company.required_funds %> target</span>
+        <span class="tag"><%= company.loan_rate %>% return</span>
+        <span class="tag"><%= company.investments.map(&:user_id).count %> investors</span>
+        <div class="progress">
+          <% total_funded = company.investments.map(&:credit_amount).sum %>
+          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:<%= total_funded.fdiv(company.required_funds) * 100 %>%">
+           <span><%= (total_funded.fdiv(company.required_funds) * 100).round(0) %>% funded</span>
+          </div>
         </div>
       </div>
-      <div class="btn-get-started">
-        <%= link_to "More info", company_path(company), target: :blank %>
-      </div>
+
+        <%= link_to "More info", company_path(company), target: :blank, class: "filter-button-search" %>
+
     </div>
   </div>
 <% end %>
-
