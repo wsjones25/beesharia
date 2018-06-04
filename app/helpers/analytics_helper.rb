@@ -1,7 +1,7 @@
 module AnalyticsHelper
   def balance
     topups = current_user.topups.map(&:amount).sum
-    investments = current_user.investments.map(&:credit_amount).sum
+    investments = current_user.investments.map(&:credit_amount).sum.to_money
     balance = topups - investments
   end
 
