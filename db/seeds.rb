@@ -8,7 +8,10 @@
 
 
 Company.destroy_all
+Topup.destroy_all
 User.destroy_all
+puts "destroyed all data"
+
 
 
 user_one = User.create!(email: "ben@gmail.com", password: "123456", borrower: true)
@@ -167,3 +170,5 @@ company_four = Company.create!(company_number: "01933368",
 user_five = User.create!(email: "hassaninvestor@gmail.com", password: "123456", borrower: false)
 user_six = User.create!(email: "willinvestor@gmail.com", password: "123456", borrower: false)
 user_seven = User.create!(email: "owen+investor@gmail.com", password: "123456", borrower: false)
+
+puts "finished creating data"
