@@ -16,17 +16,17 @@
         <!-- Borrowing requirements  -->
         <div class="sub-info">
           <p class="subheading"> <strong> Borrowing requirements </strong></p>
-          <p><strong> Required funds:  </strong> £<%= @company.required_funds %> million</p>
+          <p><strong> Required funds:  </strong> £<%= @company.required_funds %> </p>
           <p><strong> Length:</strong> <%= @company.borrowing_length %> years</p>
           <p><strong> Borrowing type:</strong> <%= @company.loan_type %></p>
         </div>
         <!-- financials  -->
         <div class="sub-info">
           <p class="subheading"> <strong> Key financials </strong></p>
-          <p><strong> Last year EBIT: </strong> £<%= @company.last_year_ebit %> million</p>
-          <p><strong>Last year interest:  </strong> £<%= @company.last_year_interest %> million </p>
-          <p><strong>Last year debt:  </strong> £<%= @company.last_year_debt %> million </p>
-          <p><strong>Last year assets:  </strong> £ <%= @company.last_year_assets %> million</p>
+          <p><strong> Last year EBIT: </strong> £<%= @company.last_year_ebit %> </p>
+          <p><strong>Last year interest:  </strong> £<%= @company.last_year_interest %>  </p>
+          <p><strong>Last year debt:  </strong> £<%= @company.last_year_debt %>  </p>
+          <p><strong>Last year assets:  </strong> £ <%= @company.last_year_assets %> </p>
         </div>
         <% unless @company.doc_accounts.blank? %>
           <iframe src="http://docs.google.com/gview?url=<%= cl_image_path @company.doc_accounts %>&embedded=true", width="300px", height="400px"></iframe>

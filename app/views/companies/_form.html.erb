@@ -11,10 +11,10 @@
             <div class="inputs"><%= f.input :years_credit_history %></div>
             <div class="inputs"><%= f.input :business_category, collection: ["Manufacturing", "Construction", "Agriculture", "Financial and Business Services", "Education and Health Work", "Hotels and Restaurants", "Real Estate and Renting", "Tourism", "Transport, Storage, and Communication", "Wholesale and Retail Trade"]%></div>
             <div class="inputs"><%= f.input :office_address %></div>
-            <div class="inputs"><%= f.input :last_year_ebit, label: "Last year operating income (i.e. EBIT) in £s millions only" %></div>
-            <div class="inputs"><%= f.input :last_year_interest, label: "Last year funding costs (i.e. interest) in £s millions only" %></div>
-            <div class="inputs"><%= f.input :last_year_debt, label: "Last year total funding (i.e. total debt) in £s millions only" %></div>
-            <div class="inputs"><%= f.input :last_year_assets, label: "Last year total assets in £s millions only" %></div>
+            <div class="inputs"><%= f.input :last_year_ebit, label: "Last year operating income (i.e. EBIT) " %></div>
+            <div class="inputs"><%= f.input :last_year_interest, label: "Last year funding costs (i.e. interest) " %></div>
+            <div class="inputs"><%= f.input :last_year_debt, label: "Last year total funding (i.e. total debt) " %></div>
+            <div class="inputs"><%= f.input :last_year_assets, label: "Last year total assets " %></div>
           </div>
           <div class="col-xs-12 col-md-6">
             <div class="inputs"><%= f.input :loan_type, collection: ["Working Capital", "Asset Finance/Refinance", "Expansion Capital"] %></div>
