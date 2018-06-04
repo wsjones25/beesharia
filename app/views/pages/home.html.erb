@@ -5,16 +5,60 @@
       <div class="banner-text">
         <h3><span id="banner-typed-text"></span></h3>
       </div>
-      <div class="btn-get-started-home">
-        <%= link_to "Get started", "#", data: {toggle: "modal", target: "#mySignUpModal"}%>
-        <%= image_tag 'right_arrow_white.png', class: "arrow", width: 28, height: 59 %>
+        <div class="btn-get-started-home">
+          <%= link_to "Get started", "#", data: {toggle: "modal", target: "#mySignUpModal"}%>
+          <%= image_tag 'right_arrow_white.png', class: "arrow", width: 28, height: 59 %>
+        </div>
+      </div>
+        <div class="banner-right">
+        <%= image_tag 'iphone.png', class: "phone", height: 400 %>
+        </div>
       </div>
     </div>
-    <div class="banner-right">
-      <%= image_tag 'iphone.png', class: "phone", height: 400 %>
-    </div>
   </div>
+    <div class="background-home" style="background-image: url('<%= image_path 'homepage.png' %>')">
   </div>
 </div>
-<div class="background-home" style="background-image: url('<%= image_path 'homepage.png' %>')"></div>
+
+<div class="second-container">
+  <div class="times-image">
+    <%= image_tag 'thetimes.svg', class: "thetimes", height: 20 %>
+  </div>
+  <div class="standard-image">
+    <%= image_tag 'standard.svg', class: "standard", height: 20  %>
+  </div>
+  <div class="telegraph-image">
+    <%= image_tag 'thetelegraph.svg', class: "telegraph", height: 20 %>
+  </div>
+  <div class="bbc-image">
+    <%= image_tag 'bbc.svg', class: "bbc", height: 20 %>
+  </div>
+</div>
+
+<hr>
+
+<div class="third-container">
+  <div class="heading">
+    <h1>How It Works</h1>
+  </div>
+  <div class="flex-twoimages">
+    <div class="first-image">
+      <%= image_tag 'pound.svg', class: "pound", height: 120 %>
+      <p><strong>Borrow</strong> to help grow your business. </br>Set your funding target and receive</br>the best rates in the market.</p>
+    </div>
+    <div class="second-image">
+      <%= image_tag 'businessman.svg', class: "businessman", height: 120  %>
+      <p><strong>Fully</strong> Shariah Compliant Financing. </br>Giving you enhanced peace of mind.</p>
+    </div>
+  </div>
+  <div class="third-image">
+    <%= image_tag 'crowd.svg', class: "people", height: 120 %>
+    <p><strong>Invest</strong> in a diversified basket of</br>High Yield Small Business Loans</br>For a superior IRR.</p>
+  </div>
+</div>
+
+<div class="footer">
+</div>
+
+
 
