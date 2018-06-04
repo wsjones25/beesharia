@@ -1,3 +1,4 @@
+
 class CompaniesController < ApplicationController
   skip_before_action :verify_authenticity_token
   protect_from_forgery prepend: true, with: :exception
@@ -16,6 +17,7 @@ class CompaniesController < ApplicationController
     @investment = Investment.new
     @total_funded = @company.investments.map(&:credit_amount).sum
     @funded_percentage = (@total_funded.fdiv(@company.required_funds)) * 100
+    @days_remaining = (@company.created_at.to_date + 30 - Date.today).to_i
   end
 
   def funded_percent(total_funded, required_amount)
@@ -29,6 +31,7 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     @company.user = current_user
+
 
     # if @company.company_number
     #   infos = get_info_from_api(@company.company_number, @company)

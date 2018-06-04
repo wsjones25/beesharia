@@ -41,7 +41,13 @@
          <p class="subheading"> <strong> Company risk profile and cost of capital</strong></p>
          <p><strong> Risk score:</strong> <%= @company.risk_score %></p>
          <p><strong> Expected returns:</strong> <%= @company.loan_rate %> % </p>
+         <% if @days_remaining == 0 %>
+         <p>Your campaign is completed!</p>
+         <% else %>
+         <p> <strong> Campaign Days remaining:</strong> <%= @days_remaining %> days</p>
+         <% end %>
          <p>Total funded: <%= @total_funded %></p>
+
          <div class="progress">
            <div class="progress-bar" role="progressbar" aria-valuenow="70"
            aria-valuemin="0" aria-valuemax="100" style="width:<%= @funded_percentage %>%">
