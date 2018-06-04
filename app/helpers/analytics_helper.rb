@@ -29,4 +29,5 @@ module AnalyticsHelper
     total_return = arr.reduce(0) {|sum, num| sum + num }
     portfolio_return = (total_return/investments)/100
   end
+
 end

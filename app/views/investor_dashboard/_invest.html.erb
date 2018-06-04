@@ -38,10 +38,14 @@
               <div class="card-info-title">
                 <h4><%= company.risk_score %></h4>
                 <p><%= company.business_category %></p>
+                <p>Total funded: <%= @total_funded %></p>
+                <p><%= company.investments.map(&:credit_amount).sum %></p>
               </div>
               <div class="card-info-tags">
                 <span class="tag">Return: <%= company.loan_rate %>%</span>
                 <span class="tag">£<%= company.required_funds %></span>
+                <% total_funded = company.investments.map(&:credit_amount).sum %>
+                <span class="tag"><%= total_funded.fdiv(company.required_funds) * 100 %>%</span>
               </div>
             </div>
             <div class="card-info-bottom">
