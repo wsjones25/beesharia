@@ -20,7 +20,7 @@
     <meta property="og:url" content="<%= request.original_url %>" />
     <meta property="og:image" content="<%= meta_image %>" />
     <meta property="og:description" content="<%= meta_description %>" />
-    <!-- <meta property="og:site_name" content="<%= meta_title %>" /> -->
+    <meta property="og:site_name" content="<%= meta_title %>" />
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
@@ -29,6 +29,12 @@
     <meta name="twitter:description" content="<%= meta_description %>">
     <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
     <meta name="twitter:image:src" content="<%= meta_image %>">
+    <!-- Favicon data -->
+    <%= favicon_link_tag 'favicon.ico' %>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
   </head>
   <body>
     <%= render 'shared/navbar' %>
