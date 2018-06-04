@@ -114,3 +114,55 @@
   margin-top: 0px;
   border-top: none;
 }
+
+// Summary Tab
+
+.dashboard-container {
+  display: flex;
+  background-color: white;
+  margin-left: 35px;
+  margin-right: 35px;
+  border-radius: 10px;
+}
+
+.dashboard-figures {
+  width: 565px;
+
+}
+
+.available-funds, .current-risk-profile, .account-history, .campaign-pledge, .expected-returns, .amount-invested {
+  background-color: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+.current-risk-profile h2 {
+  text-align: center;
+}
+
+.account-history h2 {
+  text-align: center;
+}
+
+.dashboard-container h2 {
+    font-size: 18px;
+    margin-top: 0px;
+    font-weight: bold;
+    color: #171236;
+}
+
+.dashboard-summary {
+  flex-grow: 1;
+}
+
+// Nav Tabs Styling
+
+.nav-tabs > li.active > a {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  font-style: Asap;
+  color: #171236;
+}

@@ -1,5 +1,55 @@
-<div class="col-xs-12 col-sm-8 col-sm-offset-2">
-  <h3>Current Balance</h3>
-  <p><%= balance %></p>
+<div class="container">
+  <div class="dashboard-container">
+    <div class="dashboard-summary">
+      <div class="current-risk-profile">
+        <h2>Current Risk Profile</h2>
+          <% content_for(:after_js) do %>
+            <% invests = total_invested %>
+            <%= pie_chart Company.group(:risk_score).count, width: "50%" %>
+            <script>
+              chart = document.getElementById("chart-1");
+              myDiv = document.querySelector(".current-risk-profile");
+              myDiv.insertAdjacentElement("beforeend", chart);
+            </script>
+          <% end %>
+      </div>
+      <div class="account-history">
+        <h2>Account Summary</h2>
+        <% content_for(:after_js) do %>
+            <% invests = total_invested %>
+            <%= pie_chart Company.group(:risk_score).count, width: "50%" %>
+            <script>
+              chart = document.getElementById("chart-2");
+              myDiv = document.querySelector(".account-history");
+              myDiv.insertAdjacentElement("beforeend", chart);
+            </script>
+          <% end %>
+      </div>
+    </div>
+    <div class="dashboard-figures">
+      <div class="available-funds">
+        <h2>Account Balance</h2>
+        <p>£<%= balance %></p>
+      </div>
+      <div class="campaign-pledge">
+        <h2>Total Campaign Pledges</h2>
+        <p>£<%= total_invested %></p>
+      </div>
+      <div class="campaign-pledge">
+        <h2>Total Amount Invested</h2>
+        <p>£<%= total_invested %></p>
+      </div>
+      <div class="campaign-pledge">
+        <h2>Average Expected Returns</h2>
+        <p><%=  %>%</p>
+      </div>
+      <div class="campaign-pledge">
+        <h2>Account Information</h2>
+
+      </div>
+    </div>
+  </div>
 </div>
+
+
 
