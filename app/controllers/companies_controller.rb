@@ -14,6 +14,12 @@ class CompaniesController < ApplicationController
   def show
     @company = Company.find(params[:id])
     @investment = Investment.new
+    @total_funded = @company.investments.map(&:credit_amount).sum
+    @funded_percentage = (@total_funded.fdiv(@company.required_funds)) * 100
+  end
+
+  def funded_percent(total_funded, required_amount)
+    @funded_percent = (total_funded / required_amount)*100
   end
 
   def new
@@ -48,6 +54,7 @@ class CompaniesController < ApplicationController
       render :edit
     end
   end
+
 
   # def destroy
   #   @company.destroy
