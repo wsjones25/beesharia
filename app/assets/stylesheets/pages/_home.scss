@@ -14,7 +14,7 @@
 }
 
 .home-headers h1 {
-  font-size: 50px;
+  font-size: 60px;
   color: #171236;
   font-weight: bold;
   font-family: 'Asap', sans-serif;
@@ -31,7 +31,7 @@
 .btn-get-started-home {
   padding: 22px 20px 22px 20px;
   background-color: #171236;
-  width: 150px;
+  width: 200px;
   position: relative;
   border-radius: 10px;
   margin-top: 50px;
@@ -50,13 +50,12 @@
   opacity: 0.8;
 }
 
-// footer styling
-.footer-links {
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+.banner-left {
+  margin-right: 10px;
+
 }
+
+// footer styling
 
 .flex-home-image {
   display: flex;
@@ -85,6 +84,7 @@
 
 .thetimes, .standard, .telegraph, .bbc {
   margin-top: 20px;
+  opacity: 0.4;
 }
 
 .second-container {
@@ -112,8 +112,16 @@ hr {
   border-top: 3px solid #eeeeee;
 }
 
-.footer {
-  height: 100px;
+.footer-homepage {
+  height: 60px;
   background-color: #171236;
+  margin-top: 30px;
+}
+
+.footer-homepage p {
+  color: white;
+  text-align: center;
+  font-style: italic;
+  opacity: 0.8;
 }
 
