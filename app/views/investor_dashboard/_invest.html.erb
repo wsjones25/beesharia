@@ -1,66 +1,56 @@
-<div class="container-fluid">
-  <div class="row">
 
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-      <div class="filter-container">
-        <%= form_tag pages_dashboard_path, method: :get, class: 'form-custom-inline' do %>
-          <select class="filter-box" name="business_category">
-            <option value="">Business Category</option>
-            <% Company::BUSINESS_CATEGORY.each do |info| %>
-              <option value="<%= info %>"><%= info %></option>
-            <% end %>
-          </select>
+<div class="filter-container">
+  <%= form_tag pages_dashboard_path, method: :get, class: 'form-custom-inline' do %>
+    <select class="filter-box" name="business_category">
+      <option value="">Business Category</option>
+      <% Company::BUSINESS_CATEGORY.each do |info| %>
+        <option value="<%= info %>"><%= info %></option>
+      <% end %>
+    </select>
 
-          <select class="filter-box" name="loan_type">
-            <option value="">Loan Type</option>
-            <% Company::LOAN_TYPE.each do |info| %>
-              <option value="<%= info %>"><%= info %></option>
-            <% end %>
-          </select>
+    <select class="filter-box" name="loan_type">
+      <option value="">Loan Type</option>
+      <% Company::LOAN_TYPE.each do |info| %>
+        <option value="<%= info %>"><%= info %></option>
+      <% end %>
+    </select>
 
-          <select class="filter-box" name="risk">
-            <option value="">Risk Score</option>
-            <% Company::RISK_SCORE.each do |info| %>
-            <option value="<%= info %>"><%= info %></option>
-            <% end %>
-          </select>
+    <select class="filter-box" name="risk">
+      <option value="">Risk Score</option>
+      <% Company::RISK_SCORE.each do |info| %>
+      <option value="<%= info %>"><%= info %></option>
+      <% end %>
+    </select>
 
-          <%= submit_tag value="Search", :class => "filter-button", id: "filter" %>
-        <% end %>
+    <%= submit_tag value="Search", :class => "filter-button", id: "filter" %>
+  <% end %>
+</div>
+
+<% companies.each do |company| %>
+  <div class="cards-container">
+    <div class="card-info-top">
+      <div class="card-info-title">
+        <h4><%= company.business_category %></h4>
+        <%= image_tag 'blue_right_arrow.png', width: 28, height: 30, class: "blue-arrow" %>
+        <h4><%= company.loan_type %> loan</h4>
+      </div>
+      <div class="days_remaining">
+        <h6>0 days left</h6>
       </div>
     </div>
 
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-      <% companies.each do |company| %>
-        <div class="card">
-          <div class="card-information">
-            <div class="card-info-top">
-              <div class="card-info-title">
-                <h4><%= company.risk_score %></h4>
-                <p><%= company.business_category %></p>
-                <p>Total funded: <%= @total_funded %></p>
-                <p><%= company.investments.map(&:credit_amount).sum %></p>
-              </div>
-              <div class="card-info-tags">
-                <span class="tag">Return: <%= company.loan_rate %>%</span>
-                <span class="tag">£<%= company.required_funds %></span>
-                <% total_funded = company.investments.map(&:credit_amount).sum %>
-                <span class="tag"><%= total_funded.fdiv(company.required_funds) * 100 %>%</span>
-              </div>
-            </div>
-            <div class="card-info-bottom">
-              <span>Business Category: <%= company.business_category %></span>
-              <span>Use: <%= company.loan_type %></span>
-              <span>Days Remaining: <%= company.days_remaining %></span>
-            </div>
-            <div class="btn-get-started">
-              <%= link_to "More info", company_path(company), target: :blank %>
-              <%= image_tag 'right_arrow_white.png', class: "arrow", width: 28, height: 59 %>
-            </div>
-          </div>
+    <div class="main-info">
+      <div class="details">
+        <div class="card-info-tags">
+          <span class="tag">£<%= company.required_funds %> target</span>
+          <span class="tag"><%= company.loan_rate %>% return</span>
+          <span class="tag"><%= company.investments.map(&:user_id).count %> investors</span>
         </div>
-      <% end %>
+      </div>
+      <div class="btn-get-started">
+        <%= link_to "More info", company_path(company), target: :blank %>
+      </div>
     </div>
   </div>
+<% end %>
 
-</div>
