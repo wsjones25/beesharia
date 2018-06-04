@@ -44,6 +44,7 @@ class CompaniesController < ApplicationController
     calc_expected_return(ebit,interest)
 
     if @company.save
+
       redirect_to company_path(@company)
     else
       render :new
@@ -51,7 +52,13 @@ class CompaniesController < ApplicationController
   end
 
   def update
+    ebit = @company.last_year_ebit
+    interest = @company.last_year_interest
+    calc_risk_score(ebit, interest)
+    calc_expected_return(ebit,interest)
+
     if @company.update(company_params)
+
       redirect_to company_path(@company)
     else
       render :edit
