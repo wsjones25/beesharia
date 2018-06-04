@@ -65,7 +65,55 @@
 .background-home {
   height: 500px;
   background-size: cover;
-  margin: -30px;
+  margin: -50px;
   margin-top: -420px;
   bottom: 0px;
 }
+
+// second banner part of page
+
+.first-image, .second-image, .third-image {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+.pound, .businessman, .people {
+  margin-bottom: 20px;
+}
+
+.thetimes, .standard, .telegraph, .bbc {
+  margin-top: 20px;
+}
+
+.second-container {
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(240, 240, 240);
+}
+
+.third-container h1 {
+  font-family: 'Asap', sans-serif;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.flex-twoimages {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 25px;
+  border: 0;
+  border-top: 3px solid #eeeeee;
+}
+
+.footer {
+  height: 100px;
+  background-color: #171236;
+}
+
