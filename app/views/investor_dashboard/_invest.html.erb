@@ -45,8 +45,15 @@
 
     <div class="main-info">
       <div class="card-info-tags">
-        <span class="tag">£<%= company.required_funds %> target</span>
+        <% if company.risk_score == "High Risk" %>
+          <span class="tag" id="red"><%= company.risk_score %></span>
+        <% elsif company.risk_score == "Medium Risk" %>
+          <span class="tag" id="orange"><%= company.risk_score %></span>
+        <% else %>
+          <span class="tag" id="green"><%= company.risk_score %></span>
+        <% end %>
         <span class="tag"><%= company.loan_rate %>% return</span>
+        <span class="tag">£<%= number_with_delimiter(company.required_funds, delimiter: ',') %> target</span>
         <span class="tag"><%= company.investments.map(&:user_id).count %> investors</span>
         <div class="progress">
           <% total_funded = company.investments.map(&:credit_amount).sum %>

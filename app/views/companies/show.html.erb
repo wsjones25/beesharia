@@ -1,4 +1,12 @@
+<div class="more-info-banner" style="background-image: url('<%= image_path('agriculture.png') %>');">
+  <div class="company-category">
+    <%= @company.business_category %>
+  </div>
+</div>
 <div class="wrapper_company_show">
+
+
+
   <div class="container_company_show">
 
     <div class="company-border"><h1><%= @company.company_name %></h1></div>
@@ -16,7 +24,7 @@
         <!-- Borrowing requirements  -->
         <div class="sub-info">
           <p class="subheading"> <strong> Borrowing requirements </strong></p>
-          <p><strong> Required funds:  </strong> £<%= @company.required_funds %> </p>
+          <p><strong> Required funds:  </strong> £<%= number_with_delimiter(@company.required_funds, delimiter: ',') %> </p>
           <p><strong> Length:</strong> <%= @company.borrowing_length %> years</p>
           <p><strong> Borrowing type:</strong> <%= @company.loan_type %></p>
         </div>

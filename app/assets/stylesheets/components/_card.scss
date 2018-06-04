@@ -30,14 +30,26 @@
   justify-content: flex-start;
   align-items: center;
   .tag {
-    margin-right: 10px;
-    padding: 8px 15px;
+    margin-right: 7px;
+    padding: 7px 12px;
     background-color: #1C144C;
     color: white;
     border-radius: 60px;
     font-weight: medium;
-    font-size: 14px;
+    font-size: 13px;
   }
+}
+
+#green {
+  background-color: #73F0D6;
+}
+
+#red {
+  background-color: #ff7272;
+}
+
+#orange {
+  background-color: #ffc575;
 }
 
 .card-info-bottom {
@@ -77,7 +89,7 @@ h7 {
   margin-bottom: 0px;
   height: 0px;
   height: 36px;
-  width: 300px;
+  width: 250px;
   border-radius: 60px;
   font-weight: medium;
   font-size: 14px;
@@ -89,7 +101,7 @@ h7 {
 }
 
 .progress-bar {
-  font-size: 14px;
+  font-size: 13px;
   padding-top: 5px;
   box-shadow: none;
   color: #1C144C;
