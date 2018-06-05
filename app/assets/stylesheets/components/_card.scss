@@ -6,6 +6,10 @@
   padding: 19px 30px 15px 30px;
 }
 
+.cards-container:hover {
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.1);
+}
+
 .card-info-top {
   display: flex;
   justify-content: space-between;
@@ -119,6 +123,10 @@ h7 {
   border-radius: 10px;
   border: none;
   text-decoration: none;
+}
+
+#filter {
+  padding-top: 0px;
 }
 
 .filter-button-search:hover {
