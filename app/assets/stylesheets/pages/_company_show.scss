@@ -23,16 +23,19 @@
     margin-right: 10px;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 35px;
+    font-size: 26px;
   }
 }
 
 .days-left h5 {
  color: white;
+ font-size: 15px;
 }
 
 .form-inline {
   display: flex;
+  height: 41px;
+
 }
 
 .invest-info {
@@ -58,7 +61,7 @@
   display: flex;
   justify-content: space-between;
   p {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: lighter
   }
   span {
@@ -90,7 +93,7 @@
   h3 {
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 
@@ -104,7 +107,7 @@
   margin-right: 0px;
   margin-left: 20px;
   p {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
 
@@ -113,7 +116,7 @@
   height: 50px;
   background-color: white;
   span {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
@@ -129,13 +132,13 @@
   justify-content: space-between;
   align-items: center;
   .tag {
-    margin-right: 7px;
-    padding: 10px 16px;
+    margin-right: 6px;
+    padding: 9px 14px;
     background-color: #1C144C;
     color: white;
     border-radius: 60px;
     font-weight: medium;
-    font-size: 15px;
+    font-size: 13px;
   }
 }
 
@@ -162,7 +165,7 @@
 
 .edit-button {
   color: white;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bolder;
   padding-top: 9px;
   background-color: #73F0D6;
