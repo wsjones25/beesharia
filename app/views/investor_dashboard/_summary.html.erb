@@ -17,11 +17,11 @@
     <div class="dashboard-figures">
       <div class="available-funds">
         <h2>Account Balance</h2>
-        <p>£<%= balance %></p>
+        <p>£<%= number_with_delimiter(balance, delimiter: ',') %></p>
       </div>
       <div class="amount-invested">
         <h2>Total Investments</h2>
-        <p>£<%= total_invested %></p>
+        <p>£<%= number_with_delimiter(total_invested, delimiter: ',') %></p>
       </div>
       <div class="expected-returns">
         <h2>Portfolio Expected Returns</h2>
