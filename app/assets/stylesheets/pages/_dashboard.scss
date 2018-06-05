@@ -118,14 +118,17 @@
 
 }
 
-.available-funds, .current-risk-profile, .account-history, .campaign-pledge, .expected-returns, .amount-invested {
+.available-funds, .account-history, .expected-returns, .amount-invested {
   background-color: white;
   margin: 20px;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
+.current-risk-profile, .campaign-pledge {
+  margin: 20px;
+  padding: 20px;
+}
 
 .current-risk-profile h2 {
   text-align: center;

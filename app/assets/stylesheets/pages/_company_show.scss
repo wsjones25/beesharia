@@ -167,19 +167,21 @@
   color: white;
   font-size: 13px;
   font-weight: bolder;
-  padding-top: 9px;
+
+  padding: 10px 16px;
   background-color: #73F0D6;
-  height: 40px;
-  width: 350px;
-  text-align: center;
-  border-radius: 10px;
-  border: none;
-  text-decoration: none;
+  color: white;
+  border-radius: 60px;
+  font-weight: medium;
+  font-size: 15px;
+  padding-left: 142px;
+  padding-right: 150px;
 }
 
 .edit-button:hover {
   text-decoration: none;
-  color: #1C144C;
+  color: white;
+  opacity: 0.6;
 }
 
 
