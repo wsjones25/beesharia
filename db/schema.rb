@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2018_05_31_152126) do
   enable_extension "plpgsql"
 
   create_table "companies", force: :cascade do |t|
-    t.integer "company_number"
+    t.string "company_number"
     t.string "company_name"
     t.string "director_names"
     t.integer "years_credit_history"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2018_05_31_152126) do
   end
 
   create_table "investments", force: :cascade do |t|
-    t.integer "credit_amount"
+    t.integer "credit_amount", default: 0
     t.bigint "company_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2018_05_31_152126) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "borrower"
+    t.boolean "borrower", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -5,22 +5,10 @@
         <h2>Current Risk Profile</h2>
           <% content_for(:after_js) do %>
             <% invests = total_invested %>
-            <%= pie_chart Company.group(:risk_score).count, width: "50%" %>
+            <%= pie_chart Investment.where(user_id: current_user.id).joins(:company).group(:risk_score).count, width: "50%" %>
             <script>
               chart = document.getElementById("chart-1");
               myDiv = document.querySelector(".current-risk-profile");
-              myDiv.insertAdjacentElement("beforeend", chart);
-            </script>
-          <% end %>
-      </div>
-      <div class="account-history">
-        <h2>Account Summary</h2>
-        <% content_for(:after_js) do %>
-            <% invests = total_invested %>
-            <%= pie_chart Company.group(:risk_score).count, width: "50%" %>
-            <script>
-              chart = document.getElementById("chart-2");
-              myDiv = document.querySelector(".account-history");
               myDiv.insertAdjacentElement("beforeend", chart);
             </script>
           <% end %>
@@ -31,12 +19,12 @@
         <h2>Account Balance</h2>
         <p>£<%= balance %></p>
       </div>
-      <div class="campaign-pledge">
-        <h2>Total Campaign Pledges</h2>
+      <div class="amount-invested">
+        <h2>Total Investments</h2>
         <p>£<%= total_invested %></p>
       </div>
-      <div class="campaign-pledge">
-        <h2>Average Expected Returns</h2>
+      <div class="expected-returns">
+        <h2>Portfolio Expected Returns</h2>
         <p><%= avg_expected_return %>%</p>
       </div>
       <div class="campaign-pledge">

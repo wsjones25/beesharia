@@ -10,6 +10,7 @@
 Company.destroy_all
 Topup.destroy_all
 User.destroy_all
+Investment.destroy_all
 puts "destroyed all data"
 
 
@@ -242,9 +243,9 @@ Investment.create(credit_amount: 30000, user: user_thirteen, company: company_ei
 Investment.create(credit_amount: 20000, user: user_thirteen, company: company_nine)
 Investment.create(credit_amount: 10000, user: user_thirteen, company: company_ten)
 
-Topup.create(amount_cents: 300000, user: user_eleven)
-Topup.create(amount_cents: 250000, user: user_twelve)
-Topup.create(amount_cents: 400000, user: user_thirteen)
+Topup.create(amount_cents: 100000000, user: user_eleven)
+Topup.create(amount_cents: 250000000, user: user_twelve)
+Topup.create(amount_cents: 400000000, user: user_thirteen)
 
 
 
