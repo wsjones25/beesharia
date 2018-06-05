@@ -107,7 +107,10 @@
 
 .flex-fourimages {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
+  margin-top: 20px;
+  margin-bottom: 100px;
 }
 
 hr {
