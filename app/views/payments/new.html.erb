@@ -1,16 +1,17 @@
+<div class="payment-styling center-block">
+  <%= form_tag topup_payments_path(@topup) do %>
+    <article>
+      <label class="amount">
+        <span>This will add  <%= humanized_money_with_symbol(@topup.amount_cents / 100) %> to your Account</span>
+      </label>
+    </article>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-name="Add Funds"
+      data-email="<%= current_user.email %>"
+      data-amount="<%= @topup.amount_cents %>"
+      data-currency="<%= @topup.amount.currency %>">
+    </script>
+  <% end %>
+</div>
 
-<%= form_tag topup_payments_path(@topup) do %>
-  <article>
-    <label class="amount">
-      <span>Amount: <%= humanized_money_with_symbol(@topup.amount_cents / 100) %></span>
-    </label>
-  </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-name="My Teddy"
-    data-email="<%= current_user.email %>"
-    data-amount="<%= @topup.amount_cents %>"
-    data-currency="<%= @topup.amount.currency %>"></script>
-
-<% end %>

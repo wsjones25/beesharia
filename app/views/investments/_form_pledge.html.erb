@@ -1,6 +1,6 @@
 <%= simple_form_for([company, investment]) do |f| %>
-  <div class="col-xs-12 col-md-6">
-    <div class="inputs"><%= f.input :credit_amount, label: "Amount" %></div>
-    <div class="inputs"><%= f.button :submit, value: "Invest!", class: "btn" %></div>
+  <div class="col-xs-12 col-md-6 form-inline">
+    <div class="inputs-inline"><%= f.input :credit_amount, placeholder: "£", label: false %></div>
+    <div class="inputs"><%= f.button :submit, value: "Invest", class: "btn" %></div>
   </div>
 <% end %>

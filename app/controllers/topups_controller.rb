@@ -15,6 +15,7 @@ class TopupsController < ApplicationController
     if @topup.save
       redirect_to new_topup_payment_path(@topup)
     else
+      raise
       redirect_to pages_dashboard_path, alert: "Something went wrong"
     end
   end

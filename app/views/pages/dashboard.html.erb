@@ -1,18 +1,18 @@
 <div class="wrapper">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Invest</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Summary</a></li>
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Summary</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Invest</a></li>
     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Fund transfer</a></li>
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="home">
-      <%= render 'investor_dashboard/invest', companies: @companies %>
+      <%= render 'investor_dashboard/summary' %>
     </div>
     <div role="tabpanel" class="tab-pane" id="profile">
-      <%= render 'investor_dashboard/summary' %>
+      <%= render 'investor_dashboard/invest', companies: @companies %>
     </div>
     <div role="tabpanel" class="tab-pane" id="messages">
       <%= render 'investor_dashboard/funds' %>

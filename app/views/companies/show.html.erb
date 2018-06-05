@@ -1,8 +1,51 @@
-<div class="more-info-banner" style="background-image: url('<%= image_path('homepage.png') %>');">
-  <div class="company-category">
-    <%= @company.business_category %>
+
+<div class="more-info-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('agriculture.jpg') %>');">
+  <div class="top-info">
+    <div class="company-category">
+      <h3><%= @company.business_category %></h3>
+      <%= image_tag 'blue_right_arrow.png', width: 28, height: 30, class: "blue-arrow" %>
+      <h3 class="business-category"><%= @company.loan_type %> loan</h3>
+    </div>
+    <div class="invest-info">
+      <div class="days-left">
+        <% if ((@company.created_at.to_date + 30 - Date.today).to_i) == 0 %>
+          <h5>The campaign has finished!</h5>
+        <% else %>
+          <h5><%= ((@company.created_at.to_date + 30 - Date.today).to_i) %> days left</h5>
+        <% end %>
+      </div>
+      <% if !current_user.borrower  %>
+        <div class="buttons_company_show">
+          <%= render 'investments/form_pledge', company: @company, investment: @investment %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
+
+<div class="key-info-container">
+  <div class="progress" id="progress-more-info">
+    <% total_funded = @company.investments.map(&:credit_amount).sum %>
+    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:<%= total_funded.fdiv(@company.required_funds) * 100 %>%">
+     <span><%= (total_funded.fdiv(@company.required_funds) * 100).round(0) %>% funded</span>
+    </div>
+  </div>
+
+  <div class="key-info-tags">
+    <% if @company.risk_score == "High Risk" %>
+      <span class="tag" id="red"><%= @company.risk_score %></span>
+    <% elsif @company.risk_score == "Medium Risk" %>
+      <span class="tag" id="orange"><%= @company.risk_score %></span>
+    <% else %>
+      <span class="tag" id="green"><%= @company.risk_score %></span>
+    <% end %>
+    <span class="tag"><%= @company.loan_rate %>% return</span>
+    <span class="tag"><%= @company.borrowing_length %> month term</span>
+    <span class="tag">£<%= number_with_delimiter(@company.required_funds, delimiter: ',') %> target</span>
+    <span class="tag"><%= @company.investments.map(&:user_id).count %> investors</span>
+  </div>
+</div>
+
 <div class="wrapper_company_show">
 
 
@@ -42,36 +85,6 @@
       </div>
 
     </div>
-  </div>
-  <div class="container_company_actions">
-    <div class="div">
-       <div class="sub-info">
-         <p class="subheading"> <strong> Company risk profile and cost of capital</strong></p>
-         <p><strong> Risk score:</strong> <%= @company.risk_score %></p>
-         <p><strong> Expected returns:</strong> <%= @company.loan_rate %> % </p>
-         <% if @days_remaining == 0 %>
-         <p>Your campaign is completed!</p>
-         <% else %>
-         <p> <strong> Campaign Days remaining:</strong> <%= @days_remaining %> days</p>
-         <% end %>
-         <p>Total funded: <%= @total_funded %></p>
-
-         <div class="progress">
-           <div class="progress-bar" role="progressbar" aria-valuenow="70"
-           aria-valuemin="0" aria-valuemax="100" style="width:<%= @funded_percentage %>%">
-             <span><%= @funded_percentage %>% Complete</span>
-           </div>
-         </div>
-       <% if current_user.borrower  %>
-       <div class="buttons_company_show">
-           <%= link_to "Edit", edit_company_path, class: "btn btn-primary custom-button" %>
-         </div>
-         <% else  %>
-         <!-- TO REROUTE TO INVESTMENT NEW PAGE  -->
-           <%= render 'investments/form_pledge', company: @company, investment: @investment %>
-           <%#= link_to "Pledge", investment_path, class: "btn btn-primary custom-button" %>
-       <% end %>
-     </div>
   </div>
 </div>
 
