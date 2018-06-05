@@ -209,6 +209,45 @@ user_eleven = User.create!(email: "hassaninvest@gmail.com", password: "123456", 
 user_twelve = User.create!(email: "willinvest@gmail.com", password: "123456", borrower: false)
 user_thirteen = User.create!(email: "oweninvest@gmail.com", password: "123456", borrower: false)
 
-Investment.create(credit_amount: 50000, user: user_eleven, company: company_one)
+Investment.create(credit_amount: 30000, user: user_eleven, company: company_one)
+Investment.create(credit_amount: 50000, user: user_eleven, company: company_two)
+Investment.create(credit_amount: 40000, user: user_eleven, company: company_three)
+Investment.create(credit_amount: 20000, user: user_eleven, company: company_four)
+Investment.create(credit_amount: 50000, user: user_eleven, company: company_five)
+Investment.create(credit_amount: 40000, user: user_eleven, company: company_six)
+Investment.create(credit_amount: 35000, user: user_eleven, company: company_seven)
+Investment.create(credit_amount: 5000, user: user_eleven, company: company_eight)
+Investment.create(credit_amount: 40000, user: user_eleven, company: company_nine)
+Investment.create(credit_amount: 60000, user: user_eleven, company: company_ten)
+
+Investment.create(credit_amount: 40000, user: user_twelve, company: company_one)
+Investment.create(credit_amount: 40000, user: user_twelve, company: company_two)
+Investment.create(credit_amount: 40000, user: user_twelve, company: company_three)
+Investment.create(credit_amount: 40000, user: user_twelve, company: company_four)
+Investment.create(credit_amount: 40000, user: user_twelve, company: company_five)
+Investment.create(credit_amount: 40000, user: user_twelve, company: company_six)
+Investment.create(credit_amount: 40000, user: user_twelve, company: company_seven)
+Investment.create(credit_amount: 40000, user: user_twelve, company: company_eight)
+Investment.create(credit_amount: 40000, user: user_twelve, company: company_nine)
+Investment.create(credit_amount: 40000, user: user_twelve, company: company_ten)
+
+Investment.create(credit_amount: 20000, user: user_thirteen, company: company_one)
+Investment.create(credit_amount: 40000, user: user_thirteen, company: company_two)
+Investment.create(credit_amount: 50000, user: user_thirteen, company: company_three)
+Investment.create(credit_amount: 60000, user: user_thirteen, company: company_four)
+Investment.create(credit_amount: 50000, user: user_thirteen, company: company_five)
+Investment.create(credit_amount: 40000, user: user_thirteen, company: company_six)
+Investment.create(credit_amount: 40000, user: user_thirteen, company: company_seven)
+Investment.create(credit_amount: 30000, user: user_thirteen, company: company_eight)
+Investment.create(credit_amount: 20000, user: user_thirteen, company: company_nine)
+Investment.create(credit_amount: 10000, user: user_thirteen, company: company_ten)
+
+Topup.create(amount_cents: 300000, user: user_eleven)
+Topup.create(amount_cents: 250000, user: user_twelve)
+Topup.create(amount_cents: 400000, user: user_thirteen)
+
+
+
+
 
 puts "finished creating data"
