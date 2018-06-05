@@ -71,14 +71,19 @@
 
 // second banner part of page
 
-.first-image, .second-image, .third-image {
-  margin-top: 20px;
-  margin-bottom: 10px;
+.first-image, .second-image, .third-image, .fourth-image {
+  margin-top: 30px;
+  margin-bottom: 20px;
   text-align: center;
   justify-content: center;
 }
 
-.pound, .businessman, .people {
+.first-image, .second-image, .third-image, .fourth-image p {
+  color: black;
+  font-size: 24px;
+}
+
+.laptop, .clipboard, .people, .handshake {
   margin-bottom: 20px;
 }
 
@@ -100,7 +105,7 @@
   margin-top: 40px;
 }
 
-.flex-twoimages {
+.flex-fourimages {
   display: flex;
   justify-content: space-evenly;
 }
@@ -112,16 +117,24 @@ hr {
   border-top: 3px solid #eeeeee;
 }
 
+// footer scss
+
 .footer-homepage {
-  height: 60px;
+  padding: 40px;
   background-color: #171236;
-  margin-top: 30px;
+}
+
+.footer-homepage h3, h5 {
+  color: white;
+  text-align: center;
 }
 
 .footer-homepage p {
+  font-size: 10px;
   color: white;
-  text-align: center;
-  font-style: italic;
-  opacity: 0.8;
+}
+
+.footer-homepage h5 {
+  margin-top: 30px;
 }
 
