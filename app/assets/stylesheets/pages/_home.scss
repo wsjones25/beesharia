@@ -71,19 +71,19 @@
 
 // second banner part of page
 
-.first-image, .second-image, .third-image {
-  margin-top: 20px;
-  margin-bottom: 10px;
+.first-image, .second-image, .third-image, .fourth-image {
+  margin-top: 30px;
+  margin-bottom: 20px;
   text-align: center;
   justify-content: center;
 }
 
-.first-image, .second-image, .third-image p {
+.first-image, .second-image, .third-image, .fourth-image p {
   color: black;
   font-size: 24px;
 }
 
-.pound, .businessman, .people {
+.laptop, .clipboard, .people, .handshake {
   margin-bottom: 20px;
 }
 
@@ -105,7 +105,7 @@
   margin-top: 40px;
 }
 
-.flex-threeimages {
+.flex-fourimages {
   display: flex;
   justify-content: space-evenly;
 }
