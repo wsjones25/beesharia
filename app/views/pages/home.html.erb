@@ -5,16 +5,17 @@
       <div class="banner-text">
         <h3><span id="banner-typed-text"></span></h3>
       </div>
-        <div class="btn-get-started-home">
-          <%= link_to "Get started", "#", data: {toggle: "modal", target: "#mySignUpModal"}%>
+      <div class="home-cta">
+        <%= link_to "#", class: "btn-get-started-home", data: {toggle: "modal", target: "#mySignUpModal"} do %>
+          Get started
           <%= image_tag 'right_arrow_white.png', class: "arrow", width: 28, height: 59 %>
-        </div>
-      </div>
-        <div class="banner-right">
-        <%= image_tag 'iphone2.png', class: "phone", height: 550 %>
-        </div>
+        <% end %>
       </div>
     </div>
+    <div class="banner-right">
+      <%= image_tag 'iphone-homepage.png', class: "phone", height: 550 %>
+    </div>
+  </div>
   </div>
     <div class="background-home" style="background-image: url('<%= image_path 'homepage.png' %>')">
   </div>
@@ -35,9 +36,9 @@
   </div>
 </div>
 
-<div class="col-xs-12 col-sm-12 third-container">
+<div class="third-container">
   <div class="heading">
-    <h1>How It Works</h1>
+    <h2>How It Works</h2>
   </div>
   <div class="flex-fourimages">
     <div class="first-image">
@@ -59,20 +60,14 @@
   </div>
 </div>
 
-<div class="col-xs-12 col-sm-12 footer-container">
+<div class="footer-container">
   <div class="footer-homepage">
     <h3>Peer to peer investing on BeeShariah is regulated by the FCA</h3>
     <p>Peer to peer (P2P) lending is a form of crowdfunding and refers to investors providing finance to businesses without the use of a conventional intermediary, such as a bank. P2P lending uses the internet as a platform to reach a crowd of hundreds of potential investors.
 
     Small and medium sized enterprises (SMEs) represent a large percentage of many developed economies but they can often find challenges in securing finance from conventional sources, such as banks.
-
-    New technology in finance has created the fintech (financial technology) industry. Fintech businesses are online businesses that provide services in a faster, cost effective and more streamlined manner. Innovative alternative finance, such as peer to peer lending, aims to help plug the SME finance gap.
-
-    It is already a proven and highly successful concept in the US and UK, where it has created exciting new opportunities for investors, faster access to finance for SMEs and a healthy contribution to economic development. Global P2P lending is forecast to deliver $300 billion by 2020.
-
-    Our process
-    On Beehive, our online platform directly connects creditworthy businesses looking for funding with investors looking to support their growth. Applying the innovative technology of peer to peer lending dramatically reduces the cost, complexity and long timelines often associated with conventional finance. These savings are then passed on to the investors who get better returns and the businesses who get faster access to lower cost finance.</p>
-  <h5>copyright@BeeSharia2018</h5>
+    </p>
+  <h5>copyright<i class="far fa-copyright"></i>2018, BeeSharia</h5>
   </div>
 </div>
 
