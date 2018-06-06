@@ -15,7 +15,7 @@
 
 .home-headers h1 {
   font-size: 60px;
-  color: #171236;
+  color: $dark-blue;
   font-weight: bold;
   font-family: 'Asap', sans-serif;
   width: 700px;
@@ -30,7 +30,7 @@
 // home buttons
 .btn-get-started-home {
   padding: 20px 22px;
-  background-color: #171236;
+  background-color: $dark-blue;
   position: relative;
   border-radius: 10px;
 }
@@ -43,7 +43,7 @@ a.btn-get-started-home {
 }
 
 .home-cta {
-  margin-top: 50px;
+  margin-top: 90px;
 }
 
 .btn-get-started-home:hover {
@@ -135,7 +135,7 @@ hr {
 .footer-homepage {
   margin-top: 30px;
   padding: 40px 348px;
-  background-color: #171236;
+  background-color: $dark-blue;
 }
 
 .footer-homepage h3, h5 {
