@@ -75,7 +75,7 @@ private
 
   def calc_risk_score(ebit, interest)
     int_coverage = ebit/interest
-    if int_coverage  >= 0.05 && int_coverage <= 0.3
+    if int_coverage <= 0.3
       @company.risk_score = "High Risk"
     elsif int_coverage >0.3 && int_coverage <= 1.2
       @company.risk_score = "Medium Risk"

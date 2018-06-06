@@ -15,10 +15,10 @@
       <% end %>
     </select>
 
-    <select class="filter-box" name="risk">
+    <select class="filter-box" name="risk_score">
       <option value="">Risk Score</option>
       <% Company::RISK_SCORE.each do |info| %>
-      <option value="<%= info %>"><%= info %></option>
+        <option value="<%= info %>"><%= info %></option>
       <% end %>
     </select>
 
