@@ -205,50 +205,94 @@ company_ten = Company.create!(company_number: "01934378",
                                loan_rate: 5.67,
                                user: user_ten)
 
+user_eleven = User.create!(email: "lana@gmail.com", password: "123456", borrower: true)
+company_eleven = Company.create!(company_number: "08233368",
+                               company_name: "Manufacturing Company Ltd 2",
+                               risk_score: "Medium Risk",
+                               years_credit_history: 5,
+                               business_category: "Manufacturing",
+                               office_address: "25 Bunfield Row",
+                               last_year_ebit: 950000,
+                               last_year_interest: 2375000,
+                               last_year_debt: 4000000,
+                               last_year_assets: 5500000,
+                               loan_type: "Expansion Capital",
+                               borrowing_length: 36,
+                               use_of_funds_description: "To grow projects portfolio",
+                               required_funds: 800000,
+                               days_remaining: 26,
+                               loan_rate: 5.67,
+                               user: user_eleven)
+user_twelve = User.create!(email: "yas@gmail.com", password: "123456", borrower: true)
+company_twelve = Company.create!(company_number: "05923368",
+                                 company_name: "Manufacturing Company Ltd 3",
+                                 risk_score: "High Risk",
+                                 years_credit_history: 3,
+                                 business_category: "Manufacturing",
+                                 office_address: "30 Bunfield Row",
+                                 last_year_ebit: 300000,
+                                 last_year_interest: 1034400,
+                                 last_year_debt: 2500000,
+                                 last_year_assets: 2900000,
+                                 loan_type: "Asset Finance/Refinance",
+                                 borrowing_length: 36,
+                                 use_of_funds_description: "Pay Suppliers",
+                                 required_funds: 500000,
+                                 days_remaining: 10,
+                                 loan_rate: 9.94,
+                                 user: user_twelve)
 
-user_eleven = User.create!(email: "hassaninvest@gmail.com", password: "123456", borrower: false)
-user_twelve = User.create!(email: "willinvest@gmail.com", password: "123456", borrower: false)
-user_thirteen = User.create!(email: "oweninvest@gmail.com", password: "123456", borrower: false)
+user_thirteen = User.create!(email: "hassaninvest@gmail.com", password: "123456", borrower: false)
+user_fourteen = User.create!(email: "willinvest@gmail.com", password: "123456", borrower: false)
+user_fifteen = User.create!(email: "oweninvest@gmail.com", password: "123456", borrower: false)
 
-Investment.create(credit_amount: 30000, user: user_eleven, company: company_one)
-Investment.create(credit_amount: 50000, user: user_eleven, company: company_two)
-Investment.create(credit_amount: 40000, user: user_eleven, company: company_three)
-Investment.create(credit_amount: 20000, user: user_eleven, company: company_four)
-Investment.create(credit_amount: 50000, user: user_eleven, company: company_five)
-Investment.create(credit_amount: 40000, user: user_eleven, company: company_six)
-Investment.create(credit_amount: 35000, user: user_eleven, company: company_seven)
-Investment.create(credit_amount: 5000, user: user_eleven, company: company_eight)
-Investment.create(credit_amount: 40000, user: user_eleven, company: company_nine)
-Investment.create(credit_amount: 60000, user: user_eleven, company: company_ten)
-
-Investment.create(credit_amount: 40000, user: user_twelve, company: company_one)
-Investment.create(credit_amount: 40000, user: user_twelve, company: company_two)
-Investment.create(credit_amount: 40000, user: user_twelve, company: company_three)
-Investment.create(credit_amount: 40000, user: user_twelve, company: company_four)
-Investment.create(credit_amount: 40000, user: user_twelve, company: company_five)
-Investment.create(credit_amount: 40000, user: user_twelve, company: company_six)
-Investment.create(credit_amount: 40000, user: user_twelve, company: company_seven)
-Investment.create(credit_amount: 40000, user: user_twelve, company: company_eight)
-Investment.create(credit_amount: 40000, user: user_twelve, company: company_nine)
-Investment.create(credit_amount: 40000, user: user_twelve, company: company_ten)
-
-Investment.create(credit_amount: 20000, user: user_thirteen, company: company_one)
-Investment.create(credit_amount: 40000, user: user_thirteen, company: company_two)
-Investment.create(credit_amount: 50000, user: user_thirteen, company: company_three)
-Investment.create(credit_amount: 60000, user: user_thirteen, company: company_four)
+Investment.create(credit_amount: 30000, user: user_thirteen, company: company_one)
+Investment.create(credit_amount: 50000, user: user_thirteen, company: company_two)
+Investment.create(credit_amount: 40000, user: user_thirteen, company: company_three)
+Investment.create(credit_amount: 20000, user: user_thirteen, company: company_four)
 Investment.create(credit_amount: 50000, user: user_thirteen, company: company_five)
 Investment.create(credit_amount: 40000, user: user_thirteen, company: company_six)
-Investment.create(credit_amount: 40000, user: user_thirteen, company: company_seven)
-Investment.create(credit_amount: 30000, user: user_thirteen, company: company_eight)
-Investment.create(credit_amount: 20000, user: user_thirteen, company: company_nine)
-Investment.create(credit_amount: 10000, user: user_thirteen, company: company_ten)
-
-Topup.create(amount_cents: 100000000, user: user_eleven)
-Topup.create(amount_cents: 250000000, user: user_twelve)
-Topup.create(amount_cents: 400000000, user: user_thirteen)
+Investment.create(credit_amount: 35000, user: user_thirteen, company: company_seven)
+Investment.create(credit_amount: 5000, user: user_thirteen, company: company_eight)
+Investment.create(credit_amount: 40000, user: user_thirteen, company: company_nine)
+Investment.create(credit_amount: 60000, user: user_thirteen, company: company_ten)
+Investment.create(credit_amount: 60000, user: user_thirteen, company: company_eleven)
+Investment.create(credit_amount: 60000, user: user_thirteen, company: company_twelve)
 
 
+Investment.create(credit_amount: 40000, user: user_fourteen, company: company_one)
+Investment.create(credit_amount: 40000, user: user_fourteen, company: company_two)
+Investment.create(credit_amount: 40000, user: user_fourteen, company: company_three)
+Investment.create(credit_amount: 40000, user: user_fourteen, company: company_four)
+Investment.create(credit_amount: 40000, user: user_fourteen, company: company_five)
+Investment.create(credit_amount: 40000, user: user_fourteen, company: company_six)
+Investment.create(credit_amount: 40000, user: user_fourteen, company: company_seven)
+Investment.create(credit_amount: 40000, user: user_fourteen, company: company_eight)
+Investment.create(credit_amount: 40000, user: user_fourteen, company: company_nine)
+Investment.create(credit_amount: 40000, user: user_fourteen, company: company_ten)
+Investment.create(credit_amount: 40000, user: user_fourteen, company: company_eleven)
+Investment.create(credit_amount: 40000, user: user_fourteen, company: company_twelve)
 
+
+
+Investment.create(credit_amount: 20000, user: user_fifteen, company: company_one)
+Investment.create(credit_amount: 40000, user: user_fifteen, company: company_two)
+Investment.create(credit_amount: 50000, user: user_fifteen, company: company_three)
+Investment.create(credit_amount: 60000, user: user_fifteen, company: company_four)
+Investment.create(credit_amount: 50000, user: user_fifteen, company: company_five)
+Investment.create(credit_amount: 40000, user: user_fifteen, company: company_six)
+Investment.create(credit_amount: 40000, user: user_fifteen, company: company_seven)
+Investment.create(credit_amount: 30000, user: user_fifteen, company: company_eight)
+Investment.create(credit_amount: 20000, user: user_fifteen, company: company_nine)
+Investment.create(credit_amount: 10000, user: user_fifteen, company: company_ten)
+Investment.create(credit_amount: 10000, user: user_fifteen, company: company_eleven)
+Investment.create(credit_amount: 10000, user: user_fifteen, company: company_twelve)
+
+
+
+Topup.create(amount_cents: 100000000, user: user_thirteen)
+Topup.create(amount_cents: 250000000, user: user_fourteen)
+Topup.create(amount_cents: 400000000, user: user_fifteen)
 
 
 puts "finished creating data"
