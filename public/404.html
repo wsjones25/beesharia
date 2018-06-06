@@ -37,11 +37,15 @@
   </style>
 </head>
 
+<body class="rails-default-error-page">
+  <body onload="history.back()"></body>
+  <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
       <h1>404</h1>
       <p>Ooops, clearly you've reached a page designed by Edward Ward, bad one!</p>
     </div>
+    <script>setTimeout('history.back()', 1000*5)</script>
   </div>
 </body>
 </html>
