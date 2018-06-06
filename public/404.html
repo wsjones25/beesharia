@@ -56,6 +56,30 @@
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
+  <div class="white-background">
+  <div class="home-headers">
+    <div class="banner-left">
+      <h1>The UK's sharia-compliant lending marketplace</h1>
+      <div class="banner-text">
+        <h3><span id="banner-typed-text"></span></h3>
+      </div>
+        <div class="btn-get-started-home">
+          <%= link_to "Get started", "#", data: {toggle: "modal", target: "#mySignUpModal"}%>
+          <%= image_tag 'right_arrow_white.png', class: "arrow", width: 28, height: 59 %>
+        </div>
+      </div>
+        <div class="banner-right">
+        <%= image_tag 'iphone2.png', class: "phone", height: 550 %>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="background-home" style="background-image: url('<%= image_path 'homepage.png' %>')">
+  </div>
+</div>
+
+
+
   <div class="dialog">
     <div>
       <h1>The page you were looking for doesn't exist.</h1>
