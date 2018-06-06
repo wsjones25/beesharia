@@ -31,3 +31,5 @@ class Company < ApplicationRecord
     return all
   end
 end
+
+

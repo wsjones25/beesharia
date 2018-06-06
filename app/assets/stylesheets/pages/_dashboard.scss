@@ -115,14 +115,19 @@
 
 .dashboard-figures {
   width: 565px;
-
+  padding-top: 50px;
 }
 
-.available-funds, .account-history, .expected-returns, .amount-invested {
+.available-funds, .amount-invested {
   background-color: white;
   margin: 20px;
   padding: 20px;
   border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.expected-returns {
+  margin: 20px;
+  padding: 20px;
 }
 
 .current-risk-profile, .campaign-pledge {
