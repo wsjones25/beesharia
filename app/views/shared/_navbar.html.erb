@@ -10,16 +10,16 @@
     <% if user_signed_in? %>
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <p id="navbar-wagon-menu" data-toggle="dropdown"><%= current_user.email %></p>
+          <p id="navbar-wagon-menu" data-toggle="dropdown"><%= current_user.email %><i class="fas fa-caret-down"></i></p>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <% if !current_user.borrower %>
                 <%= link_to pages_dashboard_path do %>
-                  <i class="fa fa-user"></i> <%= t(".profile", default: "Dashboard") %>
+                  <%= t(".profile", default: "Dashboard") %>
                 <% end %>
               <% else %>
                 <%= link_to company_path(current_user.companies.first) do %>
-                  <i class="fa fa-user"></i> <%= t(".profile", default: "Dashboard") %>
+                  <%= t(".profile", default: "Dashboard") %>
                 <% end %>
               <% end %>
             </li>
