@@ -1,5 +1,26 @@
+<% if @company.business_category == "Manufacturing" %>
+  <% url = image_path('manufacturing.jpg') %>
+<% elsif @company.business_category == "Construction"%>
+  <% url = image_path('construction.jpg') %>
+<% elsif @company.business_category == "Agriculture"%>
+  <% url = image_path('agriculture2.jpg') %>
+<% elsif @company.business_category == "Financial and Business Services"%>
+  <% url = image_path('financial_services.jpg') %>
+<% elsif @company.business_category == "Education and Healthcare"%>
+  <% url = image_path('education_health.jpg') %>
+<% elsif @company.business_category == "Hotels & Restaurants"%>
+  <% url = image_path('hotel_restaurant.jpg') %>
+<% elsif @company.business_category == "Real Estate and Renting"%>
+  <% url = image_path('real_estate.jpg') %>
+<% elsif @company.business_category == "Tourism"%>
+  <% url = image_path('tourism.jpg') %>
+<% elsif @company.business_category == "Transport Storage and Communication"%>
+  <% url = image_path('transport_storage.jpg') %>
+<% elsif @company.business_category == "Wholesale and Retail Trade"%>
+  <% url = image_path('wholesale_retail.jpg') %>
+<% end %>
 
-<div class="more-info-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('<%= image_path('agriculture2.jpg') %>');">
+<div class="more-info-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('<%= url %>');">
   <div class="top-info">
     <div class="company-category">
       <% if !current_user.borrower %>
@@ -34,7 +55,7 @@
       <% if total_funded == 0 %>
         <span>0%</span>
       <% else %>
-        <span><%= (total_funded.fdiv(@company.required_funds) * 100).round(0) %>% funded</span>
+        <span><%= (total_funded.fdiv(@company.required_funds) * 100).round(0) %>%</span>
       <% end %>
     </div>
   </div>

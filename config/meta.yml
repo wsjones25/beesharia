@@ -1,5 +1,5 @@
 meta_product_name: "Bee Sharia"
 meta_title: "Bee Sharia - The UK's sharia-compliant lending marketplace"
 meta_description: "The UK's first sharia-compliant lending market place"
-meta_image: "logo.png"                       # should exist in `app/assets/images/`
+meta_image: "meta_image.png"                       # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
