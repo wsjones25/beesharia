@@ -32,7 +32,7 @@ company_one = Company.create!(company_number: "08933368",
                                days_remaining: 24,
                                loan_rate: 1.84,
                                user: user_one)
-company_one.remote_doc_accounts_url = "http://d2vlcm61l7u1fs.cloudfront.net/media%2F340%2F340d020a-829c-41f7-a447-75063212de2a%2FphpXcJFAg.png"
+company_one.remote_doc_accounts_url = "https://www.dartgroup.co.uk/uploadedImages/Dart_Group_Plc/Shared_Resources_(Images,_docs_etc)/Images/Consolidated-Balance-Sheet-3.jpg"
 company_one.save
 
 user_two = User.create!(email: "owen@gmail.com", password: "123456", borrower: true)
