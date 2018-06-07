@@ -73,7 +73,7 @@ company_three = Company.create!(company_number: "02933368",
                                  loan_rate: 15.25,
                                  user: user_three)
 
-user_four = User.create!(email: "hassan@gmail.com", password: "123456", borrower: true)
+user_four = User.create!(email: "hassan1@gmail.com", password: "123456", borrower: true)
 company_four = Company.create!(company_number: "01933368",
                                company_name: "Finance Company Ltd",
                                risk_score: "Low Risk",
@@ -242,7 +242,7 @@ company_twelve = Company.create!(company_number: "05923368",
                                  loan_rate: 9.94,
                                  user: user_twelve)
 
-user_thirteen = User.create!(email: "hassaninvest@gmail.com", password: "123456", borrower: false)
+user_thirteen = User.create!(email: "hassaninvest1@gmail.com", password: "123456", borrower: false)
 user_fourteen = User.create!(email: "willinvest@gmail.com", password: "123456", borrower: false)
 user_fifteen = User.create!(email: "oweninvest@gmail.com", password: "123456", borrower: false)
 
