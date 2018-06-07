@@ -51,7 +51,7 @@
 <div class="key-info-container">
   <div class="progress" id="progress-more-info">
     <% total_funded = @company.investments.map(&:credit_amount).sum %>
-    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:<%= total_funded.fdiv(@company.required_funds) * 100 %>%">
+    <div class="progress-bar" id="show-progress" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:<%= total_funded.fdiv(@company.required_funds) * 100 %>%">
       <% if total_funded == 0 %>
         <span>0%</span>
       <% else %>
