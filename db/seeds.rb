@@ -8,7 +8,6 @@
 
 
 Company.destroy_all
-
 Topup.destroy_all
 User.destroy_all
 Investment.destroy_all
