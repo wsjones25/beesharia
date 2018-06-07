@@ -113,11 +113,15 @@
 }
 
 #progress-more-info {
+  position: relative;
   width: 400px;
   height: 50px;
   background-color: white;
   span {
     font-size: 13px;
+    position: absolute;
+    right: 175px;
+    top: 12px;
   }
 }
 
